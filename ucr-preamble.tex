@@ -1,0 +1,45 @@
+% ucr-preamble.tex — helpers that are better kept out of the class file.
+% Included via _quarto.yml -> format.pdf.include-in-header
+
+% If hyperref isn't loaded (Quarto usually loads it), this prevents errors
+\providecommand{\phantomsection}{}
+
+% Captions are ordinarily single-spaced (UCR guidance)
+\usepackage{caption}
+\captionsetup{font={stretch=1}}
+
+% Footnotes are ordinarily single-spaced
+\usepackage{footmisc}
+\renewcommand{\footnotelayout}{\setstretch{1}}
+
+% Long quotations are ordinarily single-spaced
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\begin{singlespace}}
+\AtEndEnvironment{quote}{\end{singlespace}}
+\AtBeginEnvironment{quotation}{\begin{singlespace}}
+\AtEndEnvironment{quotation}{\end{singlespace}}
+
+% Bibliography rules (UCR): single-spaced + blank line between each entry.
+% Quarto can generate the bibliography either via CSL (citeproc) or via LaTeX's thebibliography.
+
+\makeatletter
+% 1) If Pandoc CSL creates a CSLReferences environment, enforce spacing there.
+\AtBeginDocument{%
+  \@ifundefined{CSLReferences}{}{%
+    \renewenvironment{CSLReferences}[2]{%
+      \begin{singlespace}%
+      \setlength{\parskip}{\baselineskip}% blank line between entries
+    }{%
+      \end{singlespace}%
+      \setlength{\parskip}{0pt}%
+    }%
+  }%
+}
+\makeatother
+
+% 2) If LaTeX uses thebibliography, enforce spacing there too.
+\AtBeginEnvironment{thebibliography}{\begin{singlespace}\setlength{\itemsep}{\baselineskip}}
+\AtEndEnvironment{thebibliography}{\end{singlespace}}
+
+% Keep float-only pages from drifting page numbers in odd places
+\usepackage{flafter}

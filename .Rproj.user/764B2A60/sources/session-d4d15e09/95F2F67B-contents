@@ -1,0 +1,55 @@
+---
+title: ""
+---
+
+# Front matter {.unnumbered .unlisted}
+
+::: {.content-visible when-format="pdf"}
+\% ============================== % Fill these fields (match UCR records): % ==============================
+
+\title{UCR\_PhD\_Dissertation}
+\author{Mohammad Dastgheib}
+
+\doctype{Dissertation} % or Thesis \degree{Doctor of Philosophy} \program{Psychology} \degreemonth{June} \degreeyear{2026} \chair{<Chair Name>} % Optional co-chair: % \cochair{<Co-Chair Name>}
+
+\% Committee list (use \\ between names; include chair as shown in UCR sample) \committee{<Chair Name>, Chairperson \\ <Member 2> \\ <Member 3>}
+
+\% Signature line count on the blank signature approval page: % (Usually = number of committee members; adjust as needed) \signaturelines{3}
+
+\% ------------------------------ % Pages i–iii (counted but hidden), then printed roman begins at iv % ------------------------------ \makefrontmatter
+
+\% ------------------------------ % OPTIONAL: Acknowledgments / Dedication (double-spaced; roman numerals printed) % Note: Including prelim pages in the TOC is OPTIONAL per the guide. % If you want them in the TOC, uncomment
+
+\addcontentsline
+
+lines. % ------------------------------
+
+\\chapter\*{Acknowledgments}
+
+\%
+
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+Write your acknowledgments here (double-spaced).
+
+\\chapter\*{Dedication}
+
+\%
+
+\addcontentsline{toc}{chapter}{Dedication}
+
+Optional dedication.
+
+\% ------------------------------ % Abstract (required for PhD; \<= 350 words). Body should be indented + double-spaced. % ------------------------------
+
+\begin{ucrabstract}
+Type your abstract here.
+\end{ucrabstract}
+
+\% ------------------------------ % TOC + Lists (single-spaced automatically by the class) % ------------------------------ \tableofcontents
+
+\listoffigures
+\listoftables
+
+\% ------------------------------ % Start main body: Arabic page 1 begins with Chapter_1.qmd % ------------------------------ \startmainmatter
+:::

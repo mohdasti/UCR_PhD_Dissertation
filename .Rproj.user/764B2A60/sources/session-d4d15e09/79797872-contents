@@ -1,0 +1,11 @@
+/_book/
+/.quarto/
+*.log
+*.aux
+*.toc
+*.out
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.synctex.gz

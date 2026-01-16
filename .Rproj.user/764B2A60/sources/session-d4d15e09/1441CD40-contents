@@ -1,0 +1,42 @@
+project:
+  type: book
+
+book:
+  title: "UCR_PhD_Dissertation"
+  author: "Mohammad Dastgheib"
+  date: "1/15/2026"
+  chapters:
+    - index.qmd
+    - Chapter_1.qmd
+    - Chapter_2.qmd
+    - Chapter_3.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+# Optional for Psychology-style citations/references (NOT table styling):
+# csl: apa-7th-edition.csl
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+
+  pdf:
+    documentclass: ucr
+    pdf-engine: xelatex
+    keep-tex: true
+
+    # We do these manually in index.qmd
+    toc: false
+    lof: false
+    lot: false
+
+    template-partials:
+      - title.tex
+
+    include-in-header:
+      - ucr-preamble.tex
+
+editor: visual
