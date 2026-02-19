@@ -20,6 +20,20 @@ title: ""
 
 \makefrontmatter
 
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+I would like to express my deepest gratitude to my advisor, Dr. Aaron R. Seitz, for his unwavering support, guidance, and mentorship throughout my doctoral journey. His insights and encouragement have been invaluable in shaping both this dissertation and my growth as a researcher. I am also profoundly grateful to my parents, Bijan and Faezeh, whose love, sacrifices, and belief in me have made this achievement possible. Their constant support has been the foundation upon which I have built my academic career.
+
+Finally, I pay my utmost respect to the Commander of the Faithful, Imam Ali (AS). He has been my spiritual refuge from the hardships of the world,\footnote{This line is derived from the renowned poem \textit{Al-Kawthariya} by the Iraqi scholar and poet Sayyid Rida al-Hindi (d. 1943). The specific couplet that inspired me reads: "Huwa kahfi min nuwab al-dunya" (\ar{هُوَ کَهفی مِن نُوَبِ الدُّنیا}), meaning "He is my cave [refuge] from the vicissitudes of the world."} a sentiment I whispered to myself countless times over these years. His memory was the quiet strength behind my perseverance, and I dedicate the spirit of this work to that enduring bond.
+
+\chapter*{Dedication}
+\addcontentsline{toc}{chapter}{Dedication}
+
+\begin{center}
+To my wife, Fatemeh, and my cats, Milo and Matcha.
+\end{center}
+
 \begin{ucrabstract}
 This dissertation examines the effects of concurrent cognitive and physical effort on task performance and physiological arousal across multiple cognitive domains. Chapter 1 investigates how task difficulty and physical effort interact in visual working memory, auditory perception, and visual perception tasks in younger adults. Results reveal independent effects of task difficulty on behavioral performance and physical effort on pupillary arousal, with no significant interactions. These findings suggest that cognitive and physical effort may rely on distinct resource pools, at least at moderate effort levels in healthy young adults. The implications for theories of limited-capacity resources and adaptive gain are discussed.
 \end{ucrabstract}

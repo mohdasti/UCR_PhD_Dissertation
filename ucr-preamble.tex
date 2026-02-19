@@ -5,6 +5,7 @@
 \providecommand{\phantomsection}{}
 
 % Captions are ordinarily single-spaced (UCR guidance)
+% IMPORTANT: Must be loaded BEFORE polyglossia/bidi
 \usepackage{caption}
 \captionsetup{font={stretch=1}}
 
@@ -43,3 +44,19 @@
 
 % Keep float-only pages from drifting page numbers in odd places
 \usepackage{flafter}
+
+% ========================================
+% Arabic Language Support
+% ========================================
+% Using fontspec for Arabic font support (simpler than polyglossia)
+\usepackage{fontspec}
+
+% Define Arabic font using Amiri (beautiful traditional Arabic font)
+\newfontfamily\arabicfont[Script=Arabic,Scale=1.0]{Amiri}
+
+% Command for inline Arabic text with proper RTL handling
+% Using XeTeX's TeXXeTstate for bidirectional text
+\newcommand{\ar}[1]{{\arabicfont\TeXXeTstate=1\beginR #1\endR}}
+
+% Note: Use \ar{...} for Arabic text in your document
+% Example: This is English^[\ar{هذا عربي}] text.
