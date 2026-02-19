@@ -5,51 +5,27 @@ title: ""
 # Front matter {.unnumbered .unlisted}
 
 ::: {.content-visible when-format="pdf"}
-\% ============================== % Fill these fields (match UCR records): % ==============================
-
-\title{UCR\_PhD\_Dissertation}
+\title{Effects of Concurrent Task Difficulty and Physical Effort on Cognitive Performance}
 \author{Mohammad Dastgheib}
+\doctype{Dissertation}
+\degree{Doctor of Philosophy}
+\program{Psychology}
+\degreemonth{June}
+\degreeyear{2026}
+\chair{Aaron R. Seitz}
 
-\doctype{Dissertation} % or Thesis \degree{Doctor of Philosophy} \program{Psychology} \degreemonth{June} \degreeyear{2026} \chair{<Chair Name>} % Optional co-chair: % \cochair{<Co-Chair Name>}
+\committee{Aaron R. Seitz, Chairperson \\ Ilana J. Bennett \\ Weiwei Zhang}
 
-\% Committee list (use \\ between names; include chair as shown in UCR sample) \committee{<Chair Name>, Chairperson \\ <Member 2> \\ <Member 3>}
+\signaturelines{3}
 
-\% Signature line count on the blank signature approval page: % (Usually = number of committee members; adjust as needed) \signaturelines{3}
-
-\% ------------------------------ % Pages i–iii (counted but hidden), then printed roman begins at iv % ------------------------------ \makefrontmatter
-
-\% ------------------------------ % OPTIONAL: Acknowledgments / Dedication (double-spaced; roman numerals printed) % Note: Including prelim pages in the TOC is OPTIONAL per the guide. % If you want them in the TOC, uncomment
-
-\addcontentsline
-
-lines. % ------------------------------
-
-\\chapter\*{Acknowledgments}
-
-\%
-
-\addcontentsline{toc}{chapter}{Acknowledgments}
-
-Write your acknowledgments here (double-spaced).
-
-\\chapter\*{Dedication}
-
-\%
-
-\addcontentsline{toc}{chapter}{Dedication}
-
-Optional dedication.
-
-\% ------------------------------ % Abstract (required for PhD; \<= 350 words). Body should be indented + double-spaced. % ------------------------------
+\makefrontmatter
 
 \begin{ucrabstract}
-Type your abstract here.
+This dissertation examines the effects of concurrent cognitive and physical effort on task performance and physiological arousal across multiple cognitive domains. Chapter 1 investigates how task difficulty and physical effort interact in visual working memory, auditory perception, and visual perception tasks in younger adults. Results reveal independent effects of task difficulty on behavioral performance and physical effort on pupillary arousal, with no significant interactions. These findings suggest that cognitive and physical effort may rely on distinct resource pools, at least at moderate effort levels in healthy young adults. The implications for theories of limited-capacity resources and adaptive gain are discussed.
 \end{ucrabstract}
-
-\% ------------------------------ % TOC + Lists (single-spaced automatically by the class) % ------------------------------ \tableofcontents
-
+\tableofcontents
 \listoffigures
 \listoftables
 
-\% ------------------------------ % Start main body: Arabic page 1 begins with Chapter_1.qmd % ------------------------------ \startmainmatter
+\startmainmatter
 :::

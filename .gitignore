@@ -9,3 +9,4 @@
 *.bcf
 *.run.xml
 *.synctex.gz
+.Rproj.user

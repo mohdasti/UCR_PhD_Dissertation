@@ -1,0 +1,25 @@
+# Chapter 2: Placeholder {#sec-chapter2}
+
+::: {.callout-note}
+This chapter is currently under development.
+:::
+
+## Introduction
+
+Content to be added.
+
+## Methods
+
+Content to be added.
+
+## Results
+
+Content to be added.
+
+## Discussion
+
+Content to be added.
+
+## Conclusions
+
+Content to be added.

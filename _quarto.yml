@@ -27,6 +27,12 @@ format:
     documentclass: ucr
     pdf-engine: xelatex
     keep-tex: true
+    cite-method: natbib
+    biblio-style: apalike
+    colorlinks: true
+    linkcolor: black
+    urlcolor: black
+    citecolor: black
 
     # We do these manually in index.qmd
     toc: false
