@@ -1,0 +1,56 @@
+# General Conclusion {#sec-general-conclusion}
+
+::: {.callout-note}
+## Scaffolding — replace with your text
+
+UCR requires journal-format dissertations to close with a general conclusion
+that "presents, discusses, and integrates the main findings of the research."
+The dissertation abstract is *not* a substitute for this chapter. Its job is
+to say what the three studies add up to *together* — something none of the
+individual chapter discussions does. Suggested structure below.
+:::
+
+## Summary of principal findings
+
+One subsection per chapter. Lead with the headline result of each study, with
+the key statistics — not a rehash of every analysis.
+
+### Chapter 1
+
+Concurrent task difficulty and physical effort in younger adults: main effects
+of difficulty on performance and of effort on the pupil response, with no
+difficulty × effort interactions.
+
+### Chapter 2
+
+…(principal findings)…
+
+### Chapter 3
+
+…(principal findings)…
+
+## Integration
+
+What do the three studies jointly imply about the core question — do cognitive
+and physical effort draw on common or distinct resources? Where do the studies
+converge, and where do they qualify each other (e.g., by domain, measure, or
+population)?
+
+## Theoretical implications
+
+What the program of research means for theories of effort costs,
+limited-capacity resources, and arousal-linked accounts (e.g., LC–NE).
+Which theoretical positions are strengthened, weakened, or refined?
+
+## Limitations
+
+Design and measurement limits that cut across the chapters (e.g., effort levels
+sampled, populations, ecological validity of lab paradigms).
+
+## Future directions
+
+The concrete next studies this dissertation motivates.
+
+## Closing
+
+A short paragraph stating the dissertation's contribution in one breath.

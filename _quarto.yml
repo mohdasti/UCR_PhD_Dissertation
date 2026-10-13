@@ -7,9 +7,11 @@ book:
   date: "12/01/2026"
   chapters:
     - index.qmd
+    - General_Introduction.qmd
     - Chapter_1.qmd
     - Chapter_2.qmd
     - Chapter_3.qmd
+    - General_Conclusion.qmd
     - references.qmd
     - Appendix_A.qmd
 

@@ -1,0 +1,44 @@
+# General Introduction {#sec-general-introduction}
+
+::: {.callout-note}
+## Scaffolding — replace with your text
+
+UCR requires journal-format dissertations to open with a general introduction
+(it "may contain a review of relevant literature"). Its job is to motivate the
+program of research as a whole and give the reader the background needed for
+Chapters 1–3. Suggested structure below — delete these notes as you write.
+:::
+
+## The problem
+
+Why study concurrent cognitive and physical effort? Motivate with the real-world
+setting (e.g., demanding cognitive work performed while the body is under load)
+and the gap: most effort research manipulates cognitive *or* physical demands in
+isolation.
+
+## Theoretical background
+
+- Cognitive effort as cost: task difficulty, performance decrements, effort
+  discounting.
+- Physical effort: operationalization (e.g., isometric handgrip at % MVC),
+  its behavioral and physiological signatures.
+- The resource question: do cognitive and physical effort draw on common
+  limited-capacity resources, or distinct pools?
+- Pupil response as an index of arousal/effort (LC–NE framework): task-evoked
+  pupil response, baseline vs. phasic components.
+
+## The present research
+
+How this dissertation attacks the problem: concurrent manipulations of task
+difficulty and physical effort across cognitive domains, with behavioral and
+pupillometric measures. State the overarching aims here.
+
+## Overview of chapters
+
+- **Chapter 1** examines effects of concurrent task difficulty and physical
+  effort on memory and perceptual performance and pupil response in younger
+  adults.
+- **Chapter 2** …(one-paragraph preview of the study and its place in the arc)…
+- **Chapter 3** …(one-paragraph preview of the study and its place in the arc)…
+
+End with a roadmap sentence pointing the reader into Chapter 1.
