@@ -4,7 +4,8 @@
 
 To examine whether subjective confidence was affected by concurrent demands or task difficulty and physical effort, we analyzed trial-level confidence ratings (4-point scale: 1 = least confident, 4 = most confident) using LMMs for each task.  As shown in @tbl-s1 and @fig-s1, confidence was consistently high across all tasks and conditions (*M* ≈ 3.5/4). We found no significant main effects of Task Difficulty, Physical Effort, or their interaction for the CDT, ADT, or VDT (all *p*s > .63).
 
-::: {#tbl-s1}
+: LMM Results for Subjective Confidence {#tbl-s1}
+
 | Task | Predictor | b | p |
 |---|---|---|---|
 | CDT | Task Difficulty | 0.002 | .650 |
@@ -17,8 +18,6 @@ To examine whether subjective confidence was affected by concurrent demands or t
 | VDT | Physical Effort | 0.0004 | .965 |
 | VDT | Interaction | -0.0003 | .962 |
 
-Table S1. LMM Results for Subjective Confidence
-:::
 
 ![Subjective Confidence Across Conditions](figures/appendix_a/figure_s1.png){#fig-s1}
 
@@ -26,7 +25,8 @@ Table S1. LMM Results for Subjective Confidence
 
 ## Section 2: Random-Effects Structure
 
-::: {#tbl-s2}
+: Final Random-Effects Structure per Model {#tbl-s2}
+
 | Model | Random-Effects Specification |
 |---|---|
 | CDT Accuracy | `(1 |
@@ -39,8 +39,6 @@ Table S1. LMM Results for Subjective Confidence
 | VDT Reaction Time | `(1 |
 | VDT Total AUC | `(1 + Difficulty * PhysicalEffort |
 
-Table S2. Final Random-Effects Structure per Model
-:::
 
 *Note.* All models were fit at the trial level . The specifications reflect the most complex structure that achieved convergence without singularity.
 
@@ -54,7 +52,8 @@ To ensure the bounds were appropriately calibrated for different statistical mod
 
 **Results Summary** As shown in @tbl-s3 and @fig-s2, all 16 non-significant interaction terms and physical effort main effects on behavior passed the equivalence test (*p*TOST < .05). Even in the most conservative case (the ADT reaction time interaction; *p*TOST = .004), the observed effect was statistically equivalent to zero within our pre-defined meaningful threshold. These findings provide robust evidence that the reported null effects reflect a true absence of meaningful interaction rather than ambiguous data.
 
-::: {#tbl-s3}
+: Fixed-Effect Estimates and Equivalence Testing Results {#tbl-s3}
+
 | Task | Outcome | Term | b | SE | 95%CI | p | pTOST | Equivalent? |
 |---|---|---|---|---|---|---|---|---|
 | CDT | Accuracy | Difficulty × Effort | -0.157 | 0.111 | [-0.373, 0.060] | .156 | < .001 | Yes |
@@ -63,8 +62,6 @@ To ensure the bounds were appropriately calibrated for different statistical mod
 | ADT | RT (log) | Difficulty × Effort | -0.052 | 0.060 | [-0.169, 0.065] | .388 | .004 | Yes |
 | VDT | Total AUC | Difficulty × Effort | -20.38 | 30.54 | [-80.23, 39.47] | .509 | < .001 | Yes |
 
-Table S3. Fixed-Effect Estimates and Equivalence Testing Results
-:::
 
 ![Forest plot of fixed-effect estimates for all non-significant terms. Points represent regression coefficients (b) with 95% Wald confidence intervals. Vertical dashed lines indicate the theoretically motivated Smallest Effect Size of Interest (SESOI) based on Park et al. (2021; d = 0.79). Estimates with confidence intervals falling entirely within the shaded SESOI bounds are considered statistically equivalent to zero (pTOST < .05).](figures/appendix_a/figure_s2.png){#fig-s2}
 
@@ -91,7 +88,8 @@ When the LMMs for Total AUC were repeated using actual measured grip force as a 
 Additional analyses examined whether the main effects of Physical Effort on Total AUC for all tasks could be due to an artifact of the motor movement itself. There is evidence that the motor act of squeezing dilates the pupil [@Beatty1982-wg], which may result in larger Total AUCs for any squeeze regardless of actual measured grip force (i.e., an “all-or-nothing” artifact). Other evidence suggests that pupil size scales proportionally with effort [@Algermissen2024-od; @Van_der_Wel2018-ko]. Therefore, we analyzed the relationship between actual measured grip force and pupil size within High physical effort trials (Low effort trials may be susceptible to floor effects). Results revealed that greater measured force was associated with smaller (not larger) Total AUC in the CDT and ADT (*p*s ≤ .030; see @tbl-s5 and @fig-s3), with a marginal trend in the same direction for the VDT (*p* = .053). This finding suggests that, to the extent that a motion artifact is captured by the pupil, it would attenuate our main effects of physical effort, rather than drive it.
 
 
-::: {#tbl-s4}
+: Measured Physical Effort Predicting Pupil Response within High-Effort Trials {#tbl-s4}
+
 | Task | Predictor | b | SE | 95% CI | p |
 |---|---|---|---|---|---|
 | CDT | auc_rel_mvc_scaled | −66.19 | 18.51 | [−102.48, −29.91] | .001 |
@@ -102,8 +100,6 @@ Additional analyses examined whether the main effects of Physical Effort on Tota
 | VDT | Difficulty (Hard) | −7.81 | 21.68 | [−50.31, 34.69] | .721 |
 | VDT | Difficulty × auc_rel_mvc_scaled | 20.55 | 19.00 | [−16.69, 57.78] | .280 |
 
-Table S4. Measured Physical Effort Predicting Pupil Response within High-Effort Trials
-:::
 
 *Note.* The predictor auc_rel_mvc_scaled represents trial-by-trial measured grip force (area under the force trace divided by MVC), z-scored within the High-effort condition.
 
@@ -113,7 +109,8 @@ Table S4. Measured Physical Effort Predicting Pupil Response within High-Effort 
 
 To examine whether individual variations in effort-related performance costs were associated with physiological arousal, we conducted a series of exploratory Pearson correlations. For each participant and each task, we calculated "difference scores" for accuracy and reaction time for both Task Difficulty (Hard minus Easy) and Physical Effort (High minus Low). These behavioral costs were then correlated with corresponding pupillary difference scores (Hard minus Easy Task Difficulty or High minus Low Physical Effort) for both Total AUC and Cognitive AUC. As summarized in @tbl-s6, no significant associations were observed between behavioral performance costs and pupillary metrics for any task. These results provide additional evidence that pupillary arousal does not modulate task difficulty- or physical effort-related performance decrements.
 
-::: {#tbl-s5}
+: Pearson Correlations Between Behavioral Costs and Pupillary Arousal {#tbl-s5}
+
 | Behavioral Metric | Pupillary Metric | Comparison | r range | p range |
 |---|---|---|---|---|
 | Accuracy | Total AUC | Physical Effort (High–Low) | −.16 to −.06 | ps > .34 |
@@ -125,14 +122,13 @@ To examine whether individual variations in effort-related performance costs wer
 | Reaction Time | Cognitive AUC | Physical Effort (High–Low) | −.12 to −.06 | ps > .46 |
 | Reaction Time | Cognitive AUC | Task Difficulty (Hard–Easy) | .03 to .28 | ps > .10 |
 
-Table S5. Pearson Correlations Between Behavioral Costs and Pupillary Arousal
-:::
 
 ## Section 6: Additional Statistics for GLMM and LMM Effects
 
 @tbl-s6 provides regression coefficients (*b*), standard errors (SE), and 95% Wald confidence intervals for all fixed-effect estimates across the primary behavioral and pupillary models, in response to Reviewer 1's request for complete reporting of effect sizes and variability for all terms.
 
-::: {#tbl-s6}
+: Fixed-Effect Estimates for All Primary Models {#tbl-s6}
+
 | Task | Outcome | Term | b | SE | 95% CI | p |
 |---|---|---|---|---|---|---|
 | CDT | Accuracy | Task Difficulty | −2.36 | 0.09 | [−2.54, −2.17] | < .001 |
@@ -167,7 +163,5 @@ Table S5. Pearson Correlations Between Behavioral Costs and Pupillary Arousal
 | VDT | Cognitive AUC | Physical Effort | −3.55 | 3.32 | [−10.05, 2.96] | .285 |
 | VDT | Cognitive AUC | Difficulty × Effort | 7.22 | 4.69 | [−1.98, 16.42] | .124 |
 
-Table S6. Fixed-Effect Estimates for All Primary Models
-:::
 
 *Note.* Accuracy models are GLMMs (binomial logit link); all other models are LMMs. Reaction time was log-transformed prior to analysis. CDT Total AUC includes Physical Effort only (Task Difficulty and its interaction were not tested for CDT because the probe stimulus occurs after the AUC measurement window). CDT Cognitive AUC was not computed for the same reason. All confidence intervals are 95% Wald intervals.

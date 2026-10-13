@@ -10,7 +10,7 @@ title: ""
 \doctype{Dissertation}
 \degree{Doctor of Philosophy}
 \program{Psychology}
-\degreemonth{June}
+\degreemonth{December}
 \degreeyear{2026}
 \chair{Ilana J. Bennett}
 

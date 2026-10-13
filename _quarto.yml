@@ -4,7 +4,7 @@ project:
 book:
   title: "UCR_PhD_Dissertation"
   author: "Mohammad Dastgheib"
-  date: "1/15/2026"
+  date: "12/01/2026"
   chapters:
     - index.qmd
     - Chapter_1.qmd
