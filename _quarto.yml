@@ -11,6 +11,7 @@ book:
     - Chapter_2.qmd
     - Chapter_3.qmd
     - references.qmd
+    - Appendix_A.qmd
 
 bibliography: references.bib
 
