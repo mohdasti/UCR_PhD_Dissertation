@@ -85,7 +85,7 @@ When the LMMs for Total AUC were repeated using actual measured grip force as a 
 
 **Continuous High Physical Effort and Pupil Response**
 
-Additional analyses examined whether the main effects of Physical Effort on Total AUC for all tasks could be due to an artifact of the motor movement itself. There is evidence that the motor act of squeezing dilates the pupil [@Beatty1982-wg], which may result in larger Total AUCs for any squeeze regardless of actual measured grip force (i.e., an “all-or-nothing” artifact). Other evidence suggests that pupil size scales proportionally with effort [@Algermissen2024-od; @Van_der_Wel2018-ko]. Therefore, we analyzed the relationship between actual measured grip force and pupil size within High physical effort trials (Low effort trials may be susceptible to floor effects). Results revealed that greater measured force was associated with smaller (not larger) Total AUC in the CDT and ADT (*p*s ≤ .030; see @tbl-s5 and @fig-s3), with a marginal trend in the same direction for the VDT (*p* = .053). This finding suggests that, to the extent that a motion artifact is captured by the pupil, it would attenuate our main effects of physical effort, rather than drive it.
+Additional analyses examined whether the main effects of Physical Effort on Total AUC for all tasks could be due to an artifact of the motor movement itself. There is evidence that the motor act of squeezing dilates the pupil [@Beatty1982-wg], which may result in larger Total AUCs for any squeeze regardless of actual measured grip force (i.e., an “all-or-nothing” artifact). Other evidence suggests that pupil size scales proportionally with effort [@Algermissen2024-od; @Van_der_Wel2018-ko]. Therefore, we analyzed the relationship between actual measured grip force and pupil size within High physical effort trials (Low effort trials may be susceptible to floor effects). Results revealed that greater measured force was associated with smaller (not larger) Total AUC in the CDT and ADT (*p*s ≤ .030; see @tbl-s4 and @fig-s3), with a marginal trend in the same direction for the VDT (*p* = .053). This finding suggests that, to the extent that a motion artifact is captured by the pupil, it would attenuate our main effects of physical effort, rather than drive it.
 
 
 : Measured Physical Effort Predicting Pupil Response within High-Effort Trials {#tbl-s4}
@@ -107,7 +107,7 @@ Additional analyses examined whether the main effects of Physical Effort on Tota
 
 ## Section 5: Individual Difference Correlations
 
-To examine whether individual variations in effort-related performance costs were associated with physiological arousal, we conducted a series of exploratory Pearson correlations. For each participant and each task, we calculated "difference scores" for accuracy and reaction time for both Task Difficulty (Hard minus Easy) and Physical Effort (High minus Low). These behavioral costs were then correlated with corresponding pupillary difference scores (Hard minus Easy Task Difficulty or High minus Low Physical Effort) for both Total AUC and Cognitive AUC. As summarized in @tbl-s6, no significant associations were observed between behavioral performance costs and pupillary metrics for any task. These results provide additional evidence that pupillary arousal does not modulate task difficulty- or physical effort-related performance decrements.
+To examine whether individual variations in effort-related performance costs were associated with physiological arousal, we conducted a series of exploratory Pearson correlations. For each participant and each task, we calculated "difference scores" for accuracy and reaction time for both Task Difficulty (Hard minus Easy) and Physical Effort (High minus Low). These behavioral costs were then correlated with corresponding pupillary difference scores (Hard minus Easy Task Difficulty or High minus Low Physical Effort) for both Total AUC and Cognitive AUC. As summarized in @tbl-s5, no significant associations were observed between behavioral performance costs and pupillary metrics for any task. These results provide additional evidence that pupillary arousal does not modulate task difficulty- or physical effort-related performance decrements.
 
 : Pearson Correlations Between Behavioral Costs and Pupillary Arousal {#tbl-s5}
 
@@ -141,9 +141,9 @@ To examine whether individual variations in effort-related performance costs wer
 | ADT | Accuracy | Task Difficulty | −5.26 | 0.13 | [−5.52, −5.00] | < .001 |
 | ADT | Accuracy | Physical Effort | −0.133 | 0.110 | [−0.35, 0.08] | .227 |
 | ADT | Accuracy | Difficulty × Effort | 0.025 | 0.160 | [−0.29, 0.34] | .878 |
-| ADT | React ion Time | Task Difficulty | 0.253 | 0.041 | [0.17, 0.33] | < .001 |
-| ADT | React ion Time | Physical Effort | 0.040 | 0.041 | [−0.04, 0.12] | .331 |
-| ADT | React ion Time | Difficulty × Effort | −0.067 | 0.059 | [−0.18, 0.05] | .250 |
+| ADT | Reaction Time | Task Difficulty | 0.253 | 0.041 | [0.17, 0.33] | < .001 |
+| ADT | Reaction Time | Physical Effort | 0.040 | 0.041 | [−0.04, 0.12] | .331 |
+| ADT | Reaction Time | Difficulty × Effort | −0.067 | 0.059 | [−0.18, 0.05] | .250 |
 | ADT | Total AUC | Physical Effort | 204.87 | 17.99 | [169.60, 240.13] | < .001 |
 | ADT | Total AUC | Task Difficulty | −26.11 | 17.99 | [−61.37, 9.16] | .147 |
 | ADT | Total AUC | Difficulty × Effort | 6.91 | 25.44 | [−42.97, 56.78] | .786 |
