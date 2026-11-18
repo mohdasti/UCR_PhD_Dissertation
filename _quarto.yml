@@ -2,7 +2,8 @@ project:
   type: book
 
 book:
-  title: "UCR_PhD_Dissertation"
+  title: "Effects of Concurrent Task Difficulty and Physical Effort on Cognitive Performance"
+  output-file: "UCR_PhD_Dissertation"
   author: "Mohammad Dastgheib"
   date: "12/01/2026"
   chapters:
@@ -13,12 +14,13 @@ book:
     - Chapter_3.qmd
     - General_Conclusion.qmd
     - references.qmd
+  appendices:
     - Appendix_A.qmd
 
 bibliography: references.bib
 
-# Optional for Psychology-style citations/references (NOT table styling):
-# csl: apa-7th-edition.csl
+# APA 7th edition (citation-style-language/styles, apa.csl)
+csl: apa.csl
 
 format:
   html:
@@ -30,8 +32,6 @@ format:
     documentclass: ucr
     pdf-engine: xelatex
     keep-tex: true
-    cite-method: natbib
-    biblio-style: apalike
     colorlinks: true
     linkcolor: black
     urlcolor: black

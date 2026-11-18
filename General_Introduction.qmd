@@ -6,7 +6,7 @@
 UCR requires journal-format dissertations to open with a general introduction
 (it "may contain a review of relevant literature"). Its job is to motivate the
 program of research as a whole and give the reader the background needed for
-Chapters 1–3. Suggested structure below — delete these notes as you write.
+Chapters 2–4. Suggested structure below — delete these notes as you write.
 :::
 
 ## The problem
@@ -35,10 +35,10 @@ pupillometric measures. State the overarching aims here.
 
 ## Overview of chapters
 
-- **Chapter 1** examines effects of concurrent task difficulty and physical
+- **Chapter 2** examines effects of concurrent task difficulty and physical
   effort on memory and perceptual performance and pupil response in younger
   adults.
-- **Chapter 2** …(one-paragraph preview of the study and its place in the arc)…
 - **Chapter 3** …(one-paragraph preview of the study and its place in the arc)…
+- **Chapter 4** …(one-paragraph preview of the study and its place in the arc)…
 
-End with a roadmap sentence pointing the reader into Chapter 1.
+End with a roadmap sentence pointing the reader into Chapter 2.

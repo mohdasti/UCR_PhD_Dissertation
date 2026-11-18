@@ -196,6 +196,7 @@
   \pagenumbering{roman}% start counting at i
   \setcounter{page}{1}%
   \maketitlepage
+  \setcounter{page}{2}% titlepage env resets the counter in oneside mode
   \makecopyrightpage
   \makesignaturepage
   \pagestyle{plain}% page iv+ prints centered footer

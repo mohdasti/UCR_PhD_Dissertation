@@ -12,3 +12,8 @@
 .Rproj.user
 
 **/*.quarto_ipynb
+.DS_Store
+.Rhistory
+*.backup
+UCR_PhD_Dissertation.tex
+dissertation_diag.txt
