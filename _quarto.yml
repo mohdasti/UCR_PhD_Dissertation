@@ -17,6 +17,7 @@ book:
   appendices:
     - Appendix_A_Chapter_2_Supplement.qmd
     - Appendix_B_Chapter_3_Supplement.qmd
+    - Appendix_C_Chapter_4_Supplement.qmd
 
 bibliography: references.bib
 

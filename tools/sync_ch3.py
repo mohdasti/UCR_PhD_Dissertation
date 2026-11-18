@@ -506,9 +506,11 @@ def build(src):
     # bibliography
     src_bib = bib_entries(read(os.path.join(src, SRC_BIB)))
     diss_bib_text = read(os.path.join(ROOT, "references.bib"))
+    diss_bib_text_slot = None
     if BIB_BEGIN in diss_bib_text:
         a = diss_bib_text.index(BIB_BEGIN)
         b = diss_bib_text.index(BIB_END) + len(BIB_END)
+        diss_bib_text_slot = diss_bib_text[:a].rstrip("\n") + "\n\n@@MANAGED_BLOCK@@\n\n" + diss_bib_text[b:].lstrip("\n")
         diss_bib_text = diss_bib_text[:a].rstrip("\n") + "\n" + diss_bib_text[b:].lstrip("\n")
     diss_bib = bib_entries(diss_bib_text)
     cited = cited_keys(chapter + appendix)
@@ -518,7 +520,11 @@ def build(src):
     missing = [k for k in new_keys if k not in src_bib]
     need(not missing, "cited but in neither bibliography: " + ", ".join(missing))
     block = BIB_BEGIN + "\n\n" + "\n\n".join(src_bib[k] for k in new_keys) + "\n\n" + BIB_END + "\n"
-    new_bib = diss_bib_text.rstrip("\n") + "\n\n" + block
+    if diss_bib_text_slot is not None:  # replace the block where it is
+        new_bib = diss_bib_text_slot.replace("@@MANAGED_BLOCK@@", block.rstrip("\n"))
+    else:
+        new_bib = diss_bib_text.rstrip("\n") + "\n\n" + block
+    new_bib = re.sub(r"\n{3,}", "\n\n", new_bib).rstrip("\n") + "\n"
 
     # _quarto.yml
     qy = read(os.path.join(ROOT, "_quarto.yml"))
@@ -526,14 +532,13 @@ def build(src):
     need(f"    - {OUT_APPENDIX}\n" in qy, f"_quarto.yml: {OUT_APPENDIX} is not in the appendices list")
 
     pre = read(os.path.join(ROOT, "ucr-preamble.tex"))
-    if PREAMBLE_MARK in pre:  # managed block: replace it (it sits at the end of the file)
+    if PREAMBLE_MARK in pre:  # managed block: replace it where it is
         a = pre.index(PREAMBLE_MARK)
-        tail = pre[a:]
-        if PREAMBLE_END in tail:
-            rest = tail[tail.index(PREAMBLE_END) + len(PREAMBLE_END):]
-            need(rest.strip() == "", "ucr-preamble.tex: text after the managed block; move it above the block")
-        pre = pre[:a]
-    pre = pre.rstrip("\n") + "\n" + PREAMBLE_ADD
+        need(PREAMBLE_END in pre[a:], "ucr-preamble.tex: Chapter 3 block has no end marker")
+        e = pre.index(PREAMBLE_END, a) + len(PREAMBLE_END)
+        pre = pre[:a].rstrip("\n") + "\n" + PREAMBLE_ADD.strip("\n") + "\n" + pre[e:].lstrip("\n")
+    else:
+        pre = pre.rstrip("\n") + "\n" + PREAMBLE_ADD.strip("\n") + "\n"
 
     # Export files: only those the chapter repo tracks in git, so local working
     # notes in the export folder never reach the dissertation repo.

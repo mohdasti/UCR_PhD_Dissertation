@@ -91,3 +91,16 @@
 \AtBeginEnvironment{longtable}{\singlespacing\ifx\@currsize\normalsize\small\fi\ifdim\tabcolsep=6pt\setlength{\tabcolsep}{4pt}\fi}
 \makeatother
 % --- end of Chapter 3 float helpers ---
+% --- Chapter 4 glyphs and tables (added by tools/sync_ch4.py) ---
+% Latin Modern has no Greek letters or prime in its text font
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{β}{\ensuremath{\beta}}
+% unicode-math redefines the prime at \begin{document}, so map it after that
+\AtBeginDocument{\newunicodechar{′}{\ensuremath{{}^{\prime}}}}
+% Chapter 4 / Appendix C tables are dense (estimates with intervals in every
+% cell): set them in \footnotesize. The flag is switched on and off by the
+% generated Chapter 4 and Appendix C files, so other chapters are unaffected.
+\newif\ifucrsmalltables
+\AtBeginEnvironment{longtable}{\ifucrsmalltables\footnotesize\setlength{\tabcolsep}{2.5pt}\fi}
+\usepackage{pdflscape}
+% --- end of Chapter 4 glyphs and tables ---
