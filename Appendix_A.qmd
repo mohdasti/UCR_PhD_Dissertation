@@ -29,15 +29,15 @@ To examine whether subjective confidence was affected by concurrent demands or t
 
 | Model | Random-Effects Specification |
 |---|---|
-| CDT Accuracy | `(1 |
-| CDT Reaction Time | `(1 |
-| CDT Total AUC | `(1 + PhysicalEffort |
-| ADT Accuracy | `(1 |
-| ADT Reaction Time | `(1 |
-| ADT Total AUC | `(1 |
-| VDT Accuracy | `(1 + Difficulty * PhysicalEffort |
-| VDT Reaction Time | `(1 |
-| VDT Total AUC | `(1 + Difficulty * PhysicalEffort |
+| CDT Accuracy | (1 \| Participant) |
+| CDT Reaction Time | (1 \| Participant) |
+| CDT Total AUC | (1 + PhysicalEffort \| Participant) |
+| ADT Accuracy | (1 \| Participant) |
+| ADT Reaction Time | (1 \| Participant) |
+| ADT Total AUC | (1 \| Participant) |
+| VDT Accuracy | (1 + Difficulty * PhysicalEffort \| Participant) |
+| VDT Reaction Time | (1 \| Participant) |
+| VDT Total AUC | (1 + Difficulty * PhysicalEffort \| Participant) |
 
 
 *Note.* All models were fit at the trial level. The specifications reflect the most complex structure that achieved convergence without singularity.
@@ -81,7 +81,7 @@ When the LMMs for Total AUC were repeated using actual measured grip force as a 
 
 **Models for Cognitive AUC (ADT and VDT only)**
 
-When the LMMs for Cognitive AUC were repeated using actual measured grip force as a continuous predictor, results revealed significant main effect of Task Difficulty for the ADT (*b* = −5.19, SE = 2.35, *p* = .027) and VDT (*b* = 6.79, SE = 2.73, *p* = .018), with a larger early pupil response in the Cognitive AUC window for Easy than Hard trials when trial-level variability was modeled. There were no significant main effects of Physical Effort (all *p*s > .10) or interactions between Task Difficulty and Physical Effort (all *p*s > .11) for ADT or VDT. This pattern of results was similar to those reported when using the categorical Physical Effort predictor, except for the significant main effect of Task Difficulty for VDT observed here.
+When the LMMs for Total AUC were repeated using actual measured grip force as a continuous predictor, results revealed significant main effect of Task Difficulty for the ADT (*b* = −5.19, SE = 2.35, *p* = .027) and VDT (*b* = 6.79, SE = 2.73, *p* = .018), with a larger early pupil response in the Cognitive AUC window for Easy than Hard trials when trial-level variability was modeled. There were no significant main effects of Physical Effort (all *p*s > .10) or interactions between Task Difficulty and Physical Effort (all *p*s > .11) for ADT or VDT. This pattern of results was similar to those reported when using the categorical Physical Effort predictor, except for the significant main effect of Task Difficulty for VDT observed here.
 
 **Continuous High Physical Effort and Pupil Response**
 
@@ -125,7 +125,7 @@ To examine whether individual variations in effort-related performance costs wer
 
 ## Additional Statistics for GLMM and LMM Effects {#sec-appA-fixed-effects}
 
-@tbl-s6 provides regression coefficients (*b*), standard errors (SE), and 95% Wald confidence intervals for all fixed-effect estimates across the primary behavioral and pupillary models, providing complete reporting of effect sizes and variability for all terms.
+@tbl-s6 provides regression coefficients (*b*), standard errors (SE), and 95% Wald confidence intervals for all fixed-effect estimates across the primary behavioral and pupillary models, in response to Reviewer 1's request for complete reporting of effect sizes and variability for all terms.
 
 : Fixed-Effect Estimates for All Primary Models {#tbl-s6}
 
