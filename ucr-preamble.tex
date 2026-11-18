@@ -87,5 +87,7 @@
 % Tables in every chapter: single-spaced, and \small unless the table
 % already chose a smaller size (UCR allows slightly smaller type in tables)
 \makeatletter
-\AtBeginEnvironment{longtable}{\singlespacing\ifx\@currsize\normalsize\small\fi}
+% and 4 pt column padding unless the table set its own (default is 6 pt)
+\AtBeginEnvironment{longtable}{\singlespacing\ifx\@currsize\normalsize\small\fi\ifdim\tabcolsep=6pt\setlength{\tabcolsep}{4pt}\fi}
 \makeatother
+% --- end of Chapter 3 float helpers ---

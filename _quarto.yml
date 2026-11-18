@@ -8,15 +8,15 @@ book:
   date: "12/01/2026"
   chapters:
     - index.qmd
-    - General_Introduction.qmd
-    - Chapter_1.qmd
-    - Chapter_2.qmd
-    - Chapter_3.qmd
-    - General_Conclusion.qmd
+    - Chapter_1_General_Introduction.qmd
+    - Chapter_2_Concurrent_Effort_Younger_Adults.qmd
+    - Chapter_3_Psychometric_Pupillometry.qmd
+    - Chapter_4_DDM_Older_Adults.qmd
+    - Chapter_5_General_Conclusion.qmd
     - references.qmd
   appendices:
-    - Appendix_A.qmd
-    - Appendix_B.qmd
+    - Appendix_A_Chapter_2_Supplement.qmd
+    - Appendix_B_Chapter_3_Supplement.qmd
 
 bibliography: references.bib
 

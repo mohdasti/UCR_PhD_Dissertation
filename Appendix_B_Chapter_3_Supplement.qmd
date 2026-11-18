@@ -161,11 +161,11 @@ if (knitr::is_latex_output()) {
     linesep = "",
     align = c(
       ">{\\raggedright\\arraybackslash}p{0.48in}",
-      ">{\\raggedright\\arraybackslash}p{0.97in}",
-      ">{\\raggedright\\arraybackslash}p{1.56in}",
-      ">{\\centering\\arraybackslash}p{0.52in}",
-      ">{\\raggedright\\arraybackslash}p{0.93in}",
-      ">{\\centering\\arraybackslash}p{0.52in}"
+      ">{\\raggedright\\arraybackslash}p{0.90in}",
+      ">{\\raggedright\\arraybackslash}p{1.45in}",
+      ">{\\centering\\arraybackslash}p{0.64in}",
+      ">{\\raggedright\\arraybackslash}p{0.86in}",
+      ">{\\centering\\arraybackslash}p{0.64in}"
     )
   )
 } else {
