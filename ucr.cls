@@ -47,6 +47,10 @@
 
 % Wrap TOC/LOF/LOT in single spacing, and set entry spacing INSIDE that environment
 % so the "blank line" is interpreted under single spacing.
+% The TOC lists chapters and first-level sections (tocdepth 1); words in all
+% three lists are not hyphenated.
+\setcounter{tocdepth}{1}
+\newcommand{\ucr@nohyphenation}{\hyphenpenalty=10000\exhyphenpenalty=10000\relax}
 \let\ucr@oldtableofcontents\tableofcontents
 \renewcommand{\tableofcontents}{%
   \clearpage
@@ -54,6 +58,8 @@
     \setlength{\cftbeforechapskip}{\baselineskip}
     \setlength{\cftbeforesecskip}{\baselineskip}
     \setlength{\cftbeforesubsecskip}{\baselineskip}
+    \ucr@nohyphenation
+    \renewcommand*{\contentsname}{Table of Contents}%
     \ucr@oldtableofcontents
   \end{singlespace}
   \clearpage
@@ -64,6 +70,7 @@
   \clearpage
   \begin{singlespace}
     \setlength{\cftbeforefigskip}{\baselineskip}
+    \ucr@nohyphenation
     \ucr@oldlistoffigures
   \end{singlespace}
   \clearpage
@@ -74,6 +81,7 @@
   \clearpage
   \begin{singlespace}
     \setlength{\cftbeforetabskip}{\baselineskip}
+    \ucr@nohyphenation
     \ucr@oldlistoftables
   \end{singlespace}
   \clearpage
