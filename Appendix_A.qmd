@@ -1,6 +1,6 @@
-# Appendix A: Supplementary Materials for Chapter 1 {#sec-appendix-a}
+# Supplementary Materials for Chapter 2 {#sec-appendix-a}
 
-## Section 1: Subjective Confidence Results
+## Subjective Confidence Results {#sec-appA-confidence}
 
 To examine whether subjective confidence was affected by concurrent demands or task difficulty and physical effort, we analyzed trial-level confidence ratings (4-point scale: 1 = least confident, 4 = most confident) using LMMs for each task.  As shown in @tbl-s1 and @fig-s1, confidence was consistently high across all tasks and conditions (*M* ≈ 3.5/4). We found no significant main effects of Task Difficulty, Physical Effort, or their interaction for the CDT, ADT, or VDT (all *p*s > .63).
 
@@ -19,11 +19,11 @@ To examine whether subjective confidence was affected by concurrent demands or t
 | VDT | Interaction | -0.0003 | .962 |
 
 
-![Subjective Confidence Across Conditions](figures/appendix_a/figure_s1.png){#fig-s1}
+![Subjective Confidence Across Conditions](figures/appendix_a/figure_s1.png){#fig-s1 fig-scap="Subjective confidence across conditions"}
 
 *Note.* The observed null effects likely reflect a significant ceiling effect in the rating distribution, as over 90% of responses were in the top two categories (3 or 4). This ceiling effect suggests that while objective performance was modulated by task difficulty, participants’ subjective sense of confidence remained uniformly high.
 
-## Section 2: Random-Effects Structure
+## Random-Effects Structure {#sec-appA-random-effects}
 
 : Final Random-Effects Structure per Model {#tbl-s2}
 
@@ -40,9 +40,9 @@ To examine whether subjective confidence was affected by concurrent demands or t
 | VDT Total AUC | `(1 + Difficulty * PhysicalEffort |
 
 
-*Note.* All models were fit at the trial level . The specifications reflect the most complex structure that achieved convergence without singularity.
+*Note.* All models were fit at the trial level. The specifications reflect the most complex structure that achieved convergence without singularity.
 
-## Section 3: Evidence for the Null (Equivalence Testing)
+## Evidence for the Null (Equivalence Testing) {#sec-appA-equivalence}
 
 To evaluate the strength of evidence for our non-significant results, we performed equivalence testing using the Two One-Sided Tests (TOST) procedure [@Lakens2018-fq]. This method allowed us to determine whether observed effects were statistically equivalent to zero within a pre-defined range of theoretically meaningful values.
 
@@ -63,9 +63,9 @@ To ensure the bounds were appropriately calibrated for different statistical mod
 | VDT | Total AUC | Difficulty × Effort | -20.38 | 30.54 | [-80.23, 39.47] | .509 | < .001 | Yes |
 
 
-![Forest plot of fixed-effect estimates for all non-significant terms. Points represent regression coefficients (b) with 95% Wald confidence intervals. Vertical dashed lines indicate the theoretically motivated Smallest Effect Size of Interest (SESOI) based on Park et al. (2021; d = 0.79). Estimates with confidence intervals falling entirely within the shaded SESOI bounds are considered statistically equivalent to zero (pTOST < .05).](figures/appendix_a/figure_s2.png){#fig-s2}
+![Forest plot of fixed-effect estimates for all non-significant terms. Points represent regression coefficients (b) with 95% Wald confidence intervals. Vertical dashed lines indicate the theoretically motivated Smallest Effect Size of Interest (SESOI) based on Park et al. (2021; d = 0.79). Estimates with confidence intervals falling entirely within the shaded SESOI bounds are considered statistically equivalent to zero (pTOST < .05).](figures/appendix_a/figure_s2.png){#fig-s2 width=80% fig-scap="Equivalence tests for non-significant terms"}
 
-## Section 4: Continuous Measures of Physical Effort
+## Continuous Measures of Physical Effort {#sec-appA-continuous}
 
 To validate and extend the categorical analyses, we fit trial-level mixed-effects models replacing the binary Physical Effort condition with actual measured grip force (area under the trial-level force trace divided by each participant's maximum voluntary contraction, z-scored across all trials) as a continuous predictor, alongside Task Difficulty (Easy vs. Hard). Overall, the pattern of results was similar to those reported when using the categorical Physical Effort predictor, with exceptions noted below, suggesting slight differences in the sensitivity of these approaches to measuring grip force.
 
@@ -81,7 +81,7 @@ When the LMMs for Total AUC were repeated using actual measured grip force as a 
 
 **Models for Cognitive AUC (ADT and VDT only)**
 
-When the LMMs for Total AUC were repeated using actual measured grip force as a continuous predictor, results revealed significant main effect of Task Difficulty for the ADT (*b* = −5.19, SE = 2.35, *p* = .027) and VDT (*b* = 6.79, SE = 2.73, *p* = .018), with a larger early pupil response in the Cognitive AUC window for Easy than Hard trials when trial-level variability was modeled. There were no significant main effects of Physical Effort (all *p*s > .10) or interactions between Task Difficulty and Physical Effort (all *p*s > .11) for ADT or VDT. This pattern of results was similar to those reported when using the categorical Physical Effort predictor, except for the significant main effect of Task Difficulty for VDT observed here.
+When the LMMs for Cognitive AUC were repeated using actual measured grip force as a continuous predictor, results revealed significant main effect of Task Difficulty for the ADT (*b* = −5.19, SE = 2.35, *p* = .027) and VDT (*b* = 6.79, SE = 2.73, *p* = .018), with a larger early pupil response in the Cognitive AUC window for Easy than Hard trials when trial-level variability was modeled. There were no significant main effects of Physical Effort (all *p*s > .10) or interactions between Task Difficulty and Physical Effort (all *p*s > .11) for ADT or VDT. This pattern of results was similar to those reported when using the categorical Physical Effort predictor, except for the significant main effect of Task Difficulty for VDT observed here.
 
 **Continuous High Physical Effort and Pupil Response**
 
@@ -103,9 +103,9 @@ Additional analyses examined whether the main effects of Physical Effort on Tota
 
 *Note.* The predictor auc_rel_mvc_scaled represents trial-by-trial measured grip force (area under the force trace divided by MVC), z-scored within the High-effort condition.
 
-![Relationship between measured force (area under the grip trace relative to MVC) and Total AUC within High-effort trials only. Higher measured exertion within the 40% MVC target window was associated with smaller pupillary responses (ps ≤ .030).](figures/appendix_a/figure_s3.png){#fig-s3}
+![Relationship between measured force (area under the grip trace relative to MVC) and Total AUC within High-effort trials only. Higher measured exertion within the 40% MVC target window was associated with smaller pupillary responses (ps ≤ .030).](figures/appendix_a/figure_s3.png){#fig-s3 fig-scap="Measured grip force and Total AUC within High-effort trials"}
 
-## Section 5: Individual Difference Correlations
+## Individual Difference Correlations {#sec-appA-correlations}
 
 To examine whether individual variations in effort-related performance costs were associated with physiological arousal, we conducted a series of exploratory Pearson correlations. For each participant and each task, we calculated "difference scores" for accuracy and reaction time for both Task Difficulty (Hard minus Easy) and Physical Effort (High minus Low). These behavioral costs were then correlated with corresponding pupillary difference scores (Hard minus Easy Task Difficulty or High minus Low Physical Effort) for both Total AUC and Cognitive AUC. As summarized in @tbl-s5, no significant associations were observed between behavioral performance costs and pupillary metrics for any task. These results provide additional evidence that pupillary arousal does not modulate task difficulty- or physical effort-related performance decrements.
 
@@ -123,9 +123,9 @@ To examine whether individual variations in effort-related performance costs wer
 | Reaction Time | Cognitive AUC | Task Difficulty (Hard–Easy) | .03 to .28 | ps > .10 |
 
 
-## Section 6: Additional Statistics for GLMM and LMM Effects
+## Additional Statistics for GLMM and LMM Effects {#sec-appA-fixed-effects}
 
-@tbl-s6 provides regression coefficients (*b*), standard errors (SE), and 95% Wald confidence intervals for all fixed-effect estimates across the primary behavioral and pupillary models, in response to Reviewer 1's request for complete reporting of effect sizes and variability for all terms.
+@tbl-s6 provides regression coefficients (*b*), standard errors (SE), and 95% Wald confidence intervals for all fixed-effect estimates across the primary behavioral and pupillary models, providing complete reporting of effect sizes and variability for all terms.
 
 : Fixed-Effect Estimates for All Primary Models {#tbl-s6}
 

@@ -8,7 +8,7 @@ Quarto book source for Mohammad Dastgheib's dissertation in Psychology at the Un
 **Chair:** Ilana J. Bennett  
 **Committee:** Ilana J. Bennett, Aaron R. Seitz, John Franchak
 
-The PDF uses the local `ucr` document class, XeLaTeX, and natbib with `apalike`. Front matter (title page, acknowledgments, dedication, abstract, and contents lists) is written in `index.qmd`.
+The PDF uses the local `ucr` document class, XeLaTeX, and citeproc with APA 7 (`apa.csl`). Front matter (title page, acknowledgments, dedication, abstract, and contents lists) is written in `index.qmd`.
 
 ## Chapters
 
@@ -16,7 +16,7 @@ The PDF uses the local `ucr` document class, XeLaTeX, and natbib with `apalike`.
 |---|---|
 | `index.qmd` | Front matter |
 | `General_Introduction.qmd` | Scaffold. Replace the notes with the general introduction. |
-| `Chapter_1.qmd` | Accepted CRPI manuscript (in press): concurrent task difficulty and physical effort in younger adults |
+| `Chapter_1.qmd` | Published CR:PI article (2026, doi:10.1186/s41235-026-00768-0); renders as Chapter 2 |
 | `Chapter_2.qmd` | Placeholder |
 | `Chapter_3.qmd` | Placeholder |
 | `General_Conclusion.qmd` | Scaffold. Replace the notes with the general conclusion. |

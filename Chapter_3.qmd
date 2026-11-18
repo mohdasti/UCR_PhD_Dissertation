@@ -1,4 +1,4 @@
-# Chapter 3: Placeholder {#sec-chapter3}
+# Placeholder for Study 3 {#sec-chapter3}
 
 ::: {.callout-note}
 This chapter is currently under development.

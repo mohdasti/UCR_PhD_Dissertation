@@ -24,16 +24,12 @@
 % Quarto can generate the bibliography either via CSL (citeproc) or via LaTeX's thebibliography.
 
 \makeatletter
-% 1) If Pandoc CSL creates a CSLReferences environment, enforce spacing there.
+% 1) Pandoc/citeproc (CSL) bibliography: keep pandoc's list environment, but
+%    force single spacing and one blank line (1\baselineskip) between entries.
 \AtBeginDocument{%
   \@ifundefined{CSLReferences}{}{%
-    \renewenvironment{CSLReferences}[2]{%
-      \begin{singlespace}%
-      \setlength{\parskip}{\baselineskip}% blank line between entries
-    }{%
-      \end{singlespace}%
-      \setlength{\parskip}{0pt}%
-    }%
+    \let\ucr@origCSLReferences\CSLReferences
+    \renewcommand{\CSLReferences}[2]{\singlespacing\ucr@origCSLReferences{#1}{1}}%
   }%
 }
 \makeatother
@@ -60,3 +56,26 @@
 
 % Note: Use \ar{...} for Arabic text in your document
 % Example: This is English^[\ar{هذا عربي}] text.
+
+% ========================================
+% Characters missing from the Latin Modern text font
+% ========================================
+% Without these, the PDF silently drops the glyphs (blank space).
+\usepackage{newunicodechar}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{₀}{\textsubscript{0}}
+
+% ========================================
+% Suppress the "Front matter" heading page
+% ========================================
+% Quarto requires index.qmd to start with an H1. That H1 would print as a
+% page before the UCR title page, so drop exactly that one starred chapter.
+\makeatletter
+\let\ucr@origchapter\chapter
+\renewcommand{\chapter}{\@ifstar{\ucr@starchapter}{\ucr@origchapter}}
+\newcommand{\ucr@starchapter}[1]{%
+  \def\ucr@tempa{#1}\def\ucr@tempb{Front matter}%
+  \ifx\ucr@tempa\ucr@tempb\else\ucr@origchapter*{#1}\fi}
+\makeatother

@@ -15,17 +15,17 @@ individual chapter discussions does. Suggested structure below.
 One subsection per chapter. Lead with the headline result of each study, with
 the key statistics — not a rehash of every analysis.
 
-### Chapter 1
+### Chapter 2
 
 Concurrent task difficulty and physical effort in younger adults: main effects
 of difficulty on performance and of effort on the pupil response, with no
 difficulty × effort interactions.
 
-### Chapter 2
+### Chapter 3
 
 …(principal findings)…
 
-### Chapter 3
+### Chapter 4
 
 …(principal findings)…
 
