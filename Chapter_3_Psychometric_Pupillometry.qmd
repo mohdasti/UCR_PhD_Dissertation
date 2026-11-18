@@ -15,6 +15,12 @@ execute:
 source(file.path("chapter3", "setup.R"), local = knitr::knit_global())
 ```
 
+This chapter analyzes the same cohort and tasks as the following preprint, whose psychometric-function fits are the basis for the analyses reported here:
+
+> Sun, A. Y., Dastgheib, M., Hu, X., Bennett, I. J., Zhang, W., Maniscalco, B., Peters, M. A. K., & Seitz, A. R. (2026). *Effects of handgrip effort on perceptual judgments and metacognitive performance in older adults* [Preprint]. PsyArXiv. <https://osf.io/preprints/psyarxiv/wjerv_v1>
+
+Andrew Y. Sun and Mohammad Dastgheib are co-first authors of the preprint, which is being revised for journal publication.
+
 ## Abstract {.unnumbered}
 
 Everyday perception often happens while the body is working, and combining demands is more costly with age. Whether physical effort changes what older adults perceive or only how readily they report a change, and whether pupil size tracks that effect, is unknown. Sixty-eight older adults judged whether two tones or two visual gratings were the same or different while squeezing a handgrip at 5% or 40% of maximum strength. Mixed-effects models of the psychometric function, the probability of reporting "different" across stimulus differences and when the stimuli were identical, tested whether high physical effort shifted the criterion for reporting a difference, reduced sensitivity, or imposed a cost that grew with task difficulty, and related pupil size before and after the second stimulus (the probe) to the judgment. Under high physical effort, participants reported a difference less often. The reduction was about as large when the stimuli were identical as when they differed, although not reliable on identical trials alone, consistent with a more conservative criterion. It was slightly larger for the smallest differences, but sensitivity did not decline overall. Pupil size during the grip did not differ reliably between physical effort levels, and the smaller pupil response to the probe under high physical effort coincided with grip release. A larger pupil before the probe was weakly associated with lower sensitivity, and no pupil measure tracked the criterion. In older adults, high physical effort appears to change mainly how readily a difference is reported rather than how well it is perceived.
