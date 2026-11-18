@@ -79,3 +79,13 @@
   \def\ucr@tempa{#1}\def\ucr@tempb{Front matter}%
   \ifx\ucr@tempa\ucr@tempb\else\ucr@origchapter*{#1}\fi}
 \makeatother
+
+% --- Chapter 3 float helpers (added by tools/sync_ch3.py) ---
+\usepackage{float}     % fig-pos: H
+\usepackage{placeins}  % \FloatBarrier
+\usepackage{needspace} % \Needspace
+% Tables in every chapter: single-spaced, and \small unless the table
+% already chose a smaller size (UCR allows slightly smaller type in tables)
+\makeatletter
+\AtBeginEnvironment{longtable}{\singlespacing\ifx\@currsize\normalsize\small\fi}
+\makeatother
