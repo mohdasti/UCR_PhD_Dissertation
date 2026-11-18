@@ -19,7 +19,7 @@ To examine whether subjective confidence was affected by concurrent demands or t
 | VDT | Interaction | -0.0003 | .962 |
 
 
-![Subjective Confidence Across Conditions](figures/appendix_a/figure_s1.png){#fig-s1 fig-scap="Subjective confidence across conditions"}
+![Subjective Confidence Across Conditions](chapter2/figures/supplement/figure_s1.png){#fig-s1 fig-scap="Subjective confidence across conditions"}
 
 *Note.* The observed null effects likely reflect a significant ceiling effect in the rating distribution, as over 90% of responses were in the top two categories (3 or 4). This ceiling effect suggests that while objective performance was modulated by task difficulty, participants’ subjective sense of confidence remained uniformly high.
 
@@ -52,7 +52,7 @@ To ensure the bounds were appropriately calibrated for different statistical mod
 
 **Results Summary** As shown in @tbl-s3 and @fig-s2, all 16 non-significant interaction terms and physical effort main effects on behavior passed the equivalence test (*p*TOST < .05). Even in the most conservative case (the ADT reaction time interaction; *p*TOST = .004), the observed effect was statistically equivalent to zero within our pre-defined meaningful threshold. These findings provide robust evidence that the reported null effects reflect a true absence of meaningful interaction rather than ambiguous data.
 
-: Fixed-Effect Estimates and Equivalence Testing Results {#tbl-s3}
+: Fixed-Effect Estimates and Equivalence Testing Results {#tbl-s3 tbl-colwidths="[7,13,17,8,7,17,6,10,15]"}
 
 | Task | Outcome | Term | b | SE | 95%CI | p | pTOST | Equivalent? |
 |---|---|---|---|---|---|---|---|---|
@@ -63,7 +63,7 @@ To ensure the bounds were appropriately calibrated for different statistical mod
 | VDT | Total AUC | Difficulty × Effort | -20.38 | 30.54 | [-80.23, 39.47] | .509 | < .001 | Yes |
 
 
-![Forest plot of fixed-effect estimates for all non-significant terms. Points represent regression coefficients (b) with 95% Wald confidence intervals. Vertical dashed lines indicate the theoretically motivated Smallest Effect Size of Interest (SESOI) based on Park et al. (2021; d = 0.79). Estimates with confidence intervals falling entirely within the shaded SESOI bounds are considered statistically equivalent to zero (pTOST < .05).](figures/appendix_a/figure_s2.png){#fig-s2 width=80% fig-scap="Equivalence tests for non-significant terms"}
+![Forest plot of fixed-effect estimates for all non-significant terms. Points represent regression coefficients (b) with 95% Wald confidence intervals. Vertical dashed lines indicate the theoretically motivated Smallest Effect Size of Interest (SESOI) based on Park et al. (2021; d = 0.79). Estimates with confidence intervals falling entirely within the shaded SESOI bounds are considered statistically equivalent to zero (pTOST < .05).](chapter2/figures/supplement/figure_s2.png){#fig-s2 width=80% fig-scap="Equivalence tests for non-significant terms"}
 
 ## Continuous Measures of Physical Effort {#sec-appA-continuous}
 
@@ -88,7 +88,7 @@ When the LMMs for Total AUC were repeated using actual measured grip force as a 
 Additional analyses examined whether the main effects of Physical Effort on Total AUC for all tasks could be due to an artifact of the motor movement itself. There is evidence that the motor act of squeezing dilates the pupil [@Beatty1982-wg], which may result in larger Total AUCs for any squeeze regardless of actual measured grip force (i.e., an “all-or-nothing” artifact). Other evidence suggests that pupil size scales proportionally with effort [@Algermissen2024-od; @Van_der_Wel2018-ko]. Therefore, we analyzed the relationship between actual measured grip force and pupil size within High physical effort trials (Low effort trials may be susceptible to floor effects). Results revealed that greater measured force was associated with smaller (not larger) Total AUC in the CDT and ADT (*p*s ≤ .030; see @tbl-s4 and @fig-s3), with a marginal trend in the same direction for the VDT (*p* = .053). This finding suggests that, to the extent that a motion artifact is captured by the pupil, it would attenuate our main effects of physical effort, rather than drive it.
 
 
-: Measured Physical Effort Predicting Pupil Response within High-Effort Trials {#tbl-s4}
+: Measured Physical Effort Predicting Pupil Response within High-Effort Trials {#tbl-s4 tbl-colwidths="[8,38,10,10,24,10]"}
 
 | Task | Predictor | b | SE | 95% CI | p |
 |---|---|---|---|---|---|
@@ -103,7 +103,7 @@ Additional analyses examined whether the main effects of Physical Effort on Tota
 
 *Note.* The predictor auc_rel_mvc_scaled represents trial-by-trial measured grip force (area under the force trace divided by MVC), z-scored within the High-effort condition.
 
-![Relationship between measured force (area under the grip trace relative to MVC) and Total AUC within High-effort trials only. Higher measured exertion within the 40% MVC target window was associated with smaller pupillary responses (ps ≤ .030).](figures/appendix_a/figure_s3.png){#fig-s3 fig-scap="Measured grip force and Total AUC within High-effort trials"}
+![Relationship between measured force (area under the grip trace relative to MVC) and Total AUC within High-effort trials only. Higher measured exertion within the 40% MVC target window was associated with smaller pupillary responses (ps ≤ .030).](chapter2/figures/supplement/figure_s3.png){#fig-s3 fig-scap="Measured grip force and Total AUC within High-effort trials"}
 
 ## Individual Difference Correlations {#sec-appA-correlations}
 
@@ -127,7 +127,7 @@ To examine whether individual variations in effort-related performance costs wer
 
 @tbl-s6 provides regression coefficients (*b*), standard errors (SE), and 95% Wald confidence intervals for all fixed-effect estimates across the primary behavioral and pupillary models, in response to Reviewer 1's request for complete reporting of effect sizes and variability for all terms.
 
-: Fixed-Effect Estimates for All Primary Models {#tbl-s6}
+: Fixed-Effect Estimates for All Primary Models {#tbl-s6 tbl-colwidths="[7,16,20,10,9,28,10]"}
 
 | Task | Outcome | Term | b | SE | 95% CI | p |
 |---|---|---|---|---|---|---|
