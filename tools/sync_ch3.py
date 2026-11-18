@@ -23,7 +23,8 @@ Writes (in the dissertation repo):
     chapter3/            setup.R, R helper, export, figures, SOURCE.txt
     references.bib       managed block of Chapter 3-only entries (between markers)
     _quarto.yml          checks that both files are listed
-    ucr-preamble.tex     adds float/placeins/needspace (once)
+    ucr-preamble.tex     float/placeins/needspace and table settings (managed block)
+    index.qmd            Chapter 3 sentence in the co-authorship acknowledgments
 
 Conversion rules (so the chapter matches Chapter 2 and UCR format):
   * Title becomes the chapter heading; the YAML abstract becomes
@@ -121,6 +122,51 @@ PREAMBLE_ADD = (
     "\\makeatother\n"
     + PREAMBLE_END + "\n"
 )
+
+
+# Related co-first-authored preprint on the same cohort. It supplies the
+# psychometric-function analyses this chapter builds on. Shown under the
+# chapter title and in the front-matter co-authorship acknowledgments.
+PREPRINT_REF = (
+    "Sun, A. Y., Dastgheib, M., Hu, X., Bennett, I. J., Zhang, W., Maniscalco, B., "
+    "Peters, M. A. K., & Seitz, A. R. (2026). Effects of handgrip effort on perceptual "
+    "judgments and metacognitive performance in older adults [Preprint]. PsyArXiv. "
+    "https://osf.io/preprints/psyarxiv/wjerv_v1"
+)
+CH3_NOTE = (
+    "This chapter analyzes the same cohort and tasks as the following preprint, whose "
+    "psychometric-function fits are the basis for the analyses reported here:\n\n"
+    "> " + PREPRINT_REF.replace("older adults [Preprint]", "older adults* [Preprint]")
+    .replace("(2026). Effects", "(2026). *Effects").replace("https://osf.io/preprints/psyarxiv/wjerv_v1",
+                                                         "<https://osf.io/preprints/psyarxiv/wjerv_v1>") + "\n\n"
+    "Andrew Y. Sun and Mohammad Dastgheib are co-first authors of the preprint, which is being "
+    "revised for journal publication.\n"
+)
+INDEX_SENTENCE = (
+    "Chapter 3 builds on psychometric-function analyses of the same cohort reported in the following "
+    "co-authored preprint: " + PREPRINT_REF.replace(
+        "older adults [Preprint]", "older adults [Preprint]") + ". Andrew Y. Sun and Mohammad Dastgheib "
+    "are co-first authors of that preprint, which is being revised for journal publication. "
+)
+INDEX_RE = re.compile(r"Chapter 3 builds on psychometric-function analyses of the same cohort reported in "
+                      r"the following co-authored preprint: [^\n]*? which is being revised for journal publication\. ")
+# Inserted before the Chapter 4 sentence (managed by sync_ch4.py) or, if that
+# is absent, before the funding sentence.
+INDEX_ANCHORS = ("Chapter 4 is in preparation for submission", "The research presented in Chapters 2, 3, and 4")
+
+
+# Entries from the chapter repo's .bib that are corrected on the way in.
+# sun2026handgrip: "type" (not "note") makes APA 7 print "[Preprint]" after the title.
+BIB_OVERRIDES = {
+    "sun2026handgrip": """@misc{sun2026handgrip,
+  title     = {Effects of Handgrip Effort on Perceptual Judgments and Metacognitive Performance in Older Adults},
+  author    = {Sun, Andrew Y. and Dastgheib, Mohammad and Hu, Xiaoping and Bennett, Ilana J. and Zhang, Weiwei and Maniscalco, Brian and Peters, Megan A. K. and Seitz, Aaron R.},
+  year      = {2026},
+  publisher = {PsyArXiv},
+  type      = {Preprint},
+  url       = {https://osf.io/preprints/psyarxiv/wjerv_v1}
+}""",
+}
 
 
 class SyncError(Exception):
@@ -491,6 +537,7 @@ def build(src):
         "     Do not edit here: edit the chapter repo and re-run the sync. -->\n\n"
         f"# {title} {{#{CH_LABEL}}}\n\n"
         + SETUP_CHUNK + "\n"
+        + CH3_NOTE + "\n"
         "## Abstract {.unnumbered}\n\n"
         f"{abstract}\n\n"
         + main.strip() + "\n"
@@ -505,6 +552,7 @@ def build(src):
 
     # bibliography
     src_bib = bib_entries(read(os.path.join(src, SRC_BIB)))
+    src_bib.update(BIB_OVERRIDES)
     diss_bib_text = read(os.path.join(ROOT, "references.bib"))
     diss_bib_text_slot = None
     if BIB_BEGIN in diss_bib_text:
@@ -567,7 +615,14 @@ def build(src):
         f"Export run: {run_id}\n"
         f"Synced: {datetime.date.today().isoformat()}\n"
     )
+    idx = read(os.path.join(ROOT, "index.qmd"))
+    idx = INDEX_RE.sub("", idx)
+    anchor = next((a for a in INDEX_ANCHORS if idx.count(a) == 1), None)
+    need(anchor is not None, "index.qmd: could not find where to put the Chapter 3 acknowledgment")
+    idx = idx.replace(anchor, INDEX_SENTENCE + anchor)
+
     return {
+        "index": idx,
         "chapter": chapter, "appendix": appendix, "setup": SETUP_HEADER + setup_code,
         "bib": new_bib, "quarto": qy, "preamble": pre, "source_txt": source_txt,
         "run_id": run_id, "export_files": export_files, "new_keys": new_keys, "labels": labels, "commit": commit,
@@ -598,6 +653,7 @@ def write(src, r):
     w("references.bib", r["bib"])
     w("_quarto.yml", r["quarto"])
     w("ucr-preamble.tex", r["preamble"])
+    w("index.qmd", r["index"])
 
 
 def main():
