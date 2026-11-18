@@ -1,0 +1,5 @@
+Chapter 3 assets, copied by tools/sync_ch3.py. Do not edit here.
+Source repo: Psychometrics_Pupillometry
+Source commit: 53979fd
+Export run: ch2fit_20261024_193248
+Synced: 2026-11-18

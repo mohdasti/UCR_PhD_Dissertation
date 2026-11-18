@@ -16,6 +16,7 @@ book:
     - references.qmd
   appendices:
     - Appendix_A.qmd
+    - Appendix_B.qmd
 
 bibliography: references.bib
 
