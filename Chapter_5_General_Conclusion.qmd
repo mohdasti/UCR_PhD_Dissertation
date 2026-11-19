@@ -1,56 +1,41 @@
 # General Conclusion {#sec-general-conclusion}
 
-::: {.callout-note}
-## Scaffolding — replace with your text
-
-UCR requires journal-format dissertations to close with a general conclusion
-that "presents, discusses, and integrates the main findings of the research."
-The dissertation abstract is *not* a substitute for this chapter. Its job is
-to say what the three studies add up to *together* — something none of the
-individual chapter discussions does. Suggested structure below.
-:::
+This dissertation asked whether concurrent physical effort and task difficulty compete for shared processing resources, how physical effort changes perceptual judgments in older adults, and whether pupil size accounts for these effects. This chapter summarizes the findings of each study, considers what the three studies show together, and sets out the implications, the limitations that cut across chapters, and the studies the findings motivate.
 
 ## Summary of principal findings
 
-One subsection per chapter. Lead with the headline result of each study, with
-the key statistics — not a rehash of every analysis.
+In Chapter 2, 38 younger adults performed a visual working-memory task and auditory and visual discrimination tasks while holding a handgrip at 5% or 40% of MVC. Harder trials were less accurate in every task and slower in both discrimination tasks, and high physical effort slowed responses in the visual discrimination task only. High physical effort enlarged the pupil response across the trial in all three tasks, whereas task difficulty changed only an exploratory early pupil measure, in the auditory task. Task difficulty and physical effort did not interact on any behavioral or pupil measure, and equivalence tests on the behavioral measures rejected interactions as large as the one previously reported with the same handgrip levels [@Park2021-rs]. The behavioral and pupil effects of the two demands were not correlated across participants.
 
-### Chapter 2
+In Chapter 3, older adults performed the auditory and visual discrimination tasks in an MRI scanner. In a mixed-effects model of all trials, high physical effort lowered the probability of reporting "different" at the average stimulus difference (*b* = −0.10, 95% CI [−0.15, −0.04]), and the psychometric function did not become shallower. The reduction was slightly larger for the smallest differences (offset × physical effort, *b* = 0.06, 95% CI [0.002, 0.11]). On trials with identical stimuli the reduction was similar in size but uncertain on its own (*b* = −0.11, 95% CI [−0.24, 0.009]). Pupil size during the grip did not differ reliably between physical effort levels. The pupil response after the stimulus to be judged was smaller under high physical effort, but the grip was released during that interval. A larger pupil just before the stimulus was weakly associated with lower sensitivity, and no pupil measure tracked the rate of "different" responses.
 
-Concurrent task difficulty and physical effort in younger adults: main effects
-of difficulty on performance and of effort on the pupil response, with no
-difficulty × effort interactions.
-
-### Chapter 3
-
-…(principal findings)…
-
-### Chapter 4
-
-…(principal findings)…
+In Chapter 4, a hierarchical Bayesian drift-diffusion model of the same older adults' choices and response times placed the effect of physical effort in the drift criterion. High physical effort shifted drift toward "same" on every trial (β = −0.053, 95% CrI [−0.103, −0.003]), whereas the effect on evidence quality was close to zero, the change in boundary separation was practically negligible, and the starting point did not change. Physical effort lowered drift slightly more on Hard than on Easy trials, but a model with that interaction did not predict better than a model without it. The criterion shift was small: it was clearer in the auditory task, and its interval included zero when participants with near-chance accuracy were excluded. Trial-wise pupil responses during the decision accompanied wider boundaries, but that association tracked decision duration, and no pupil measure taken before the decision predicted boundary separation or the starting point.
 
 ## Integration
 
-What do the three studies jointly imply about the core question — do cognitive
-and physical effort draw on common or distinct resources? Where do the studies
-converge, and where do they qualify each other (e.g., by domain, measure, or
-population)?
+The three studies give a consistent answer to the resource question. In neither age group did physical effort impose a cost that grew substantially with task difficulty. In younger adults, the interaction was absent across three tasks and two behavioral measures. In older adults, the psychometric and diffusion-model analyses both allowed at most a small additional cost on the hardest discriminations. That cost was uncertain in both analyses, and treating it as a test of the capacity account was added after the Chapter 3 results were known. At 40% of MVC, holding a grip did not appreciably take away the resources needed to remember or compare stimuli.
+
+The studies differ in what physical effort did to the judgment. In younger adults, high physical effort left accuracy unchanged and slowed responses in one task. In older adults, it changed choices: participants reported a difference less often. The psychometric analysis showed that this reduction did not come from lower sensitivity, and the diffusion model located it in the drift criterion rather than in evidence quality, response caution, or the starting point. These two analyses used the same trials, so their agreement shows that the conclusion does not depend on the model used, not that it replicates. Both also share the same weak point: the reduction on trials with identical stimuli, which distinguishes a criterion shift most directly, had the predicted direction and size but was uncertain on its own. The criterion reading is therefore the best-supported interpretation of a small effect, and it is consistent with the higher thresholds and unchanged slopes that @sun2026handgrip found in per-participant psychometric functions of the same cohort.
+
+Whether this contrast reflects age cannot be settled from these data. The younger and older samples were tested in different settings, with different stimulus differences, trial timing, and pupil measures, and Chapter 2 did not estimate a criterion. Younger adults may therefore also have shifted their criterion under high physical effort in a way that accuracy and response time did not reveal.
+
+The pupil results follow a similar pattern. In younger adults, high physical effort enlarged the pupil response robustly in every task. In older adults, its effect during the grip was weak and reliable only in the auditory task, and the smaller pupil response after the stimulus coincided with grip release and with a higher pupil size before the stimulus. In both age groups, the pupil registered physical effort to some degree but did not account for its behavioral effects: pupil and behavioral effects were not correlated across younger adults, and in older adults no pupil measure taken before the decision predicted the criterion, the boundary, or the starting point.
 
 ## Theoretical implications
 
-What the program of research means for theories of effort costs,
-limited-capacity resources, and arousal-linked accounts (e.g., LC–NE).
-Which theoretical positions are strengthened, weakened, or refined?
+A single limited-capacity resource shared by force production and stimulus comparison [@Kahneman1973-jw] predicts interactions that these studies did not find in younger adults and found to be at most small in older adults. The results fit better with multiple-resource accounts, in which producing force and comparing stimuli draw on largely separate resources [@Navon1979-jk; @Wickens2008-pj]. This conclusion is limited to the force levels and tasks studied here; heavier or more prolonged physical effort could still compete with judgments.
+
+In older adults, the main effect of physical effort was on the decision policy rather than on the evidence. This finding adds to evidence that physical exertion can change decisions that do not depend on motor performance [@Blain2019-qk], and to accounts in which the costs of physical and cognitive effort are weighed by partly shared mechanisms [@Chong2017-fx]. It is also notable for aging research. Age-related caution usually appears as wider boundaries [@ratcliff2001aging; @Starns2010-iu], yet under high physical effort the older adults here kept their boundaries essentially unchanged and shifted the criterion instead. Signal detection and diffusion-model analyses can therefore separate effects of physical effort that accuracy alone would attribute to a loss of capacity: in Chapter 4, the accuracy cost on hard trials arose mainly from the criterion shift, not from a loss of evidence quality.
+
+Adaptive gain theory links pupil size to locus coeruleus–noradrenaline activity [@Aston-Jones2005-dg], and isometric handgrip engages that system [@Mather2020-ze]. Because aging may shift the optimum of the inverted-U relation between arousal and performance to lower levels [@Mather2016-bx], the theory allowed that a 40% grip would push older adults past their optimum and degrade performance. That did not occur as a loss of sensitivity or evidence quality, and these studies do not support the stronger claim that pupil-linked processes carry the behavioral effects of physical effort. They also suggest that the pupil is a less sensitive index of physical effort in older adults, at least in a scanner, where luminance, posture, and noise are constrained. Because pupil size also covaries with activity outside the locus coeruleus [@Joshi2016-zb], links between these results and the noradrenergic system remain interpretive.
 
 ## Limitations
 
-Design and measurement limits that cut across the chapters (e.g., effort levels
-sampled, populations, ecological validity of lab paradigms).
+Several limitations cut across the chapters. First, age was compared across studies, not within one, so no difference between the younger and older adults can be attributed to age. Second, every study used only two levels of physical effort, so none could describe a dose–response relation or test an inverted-U relation between physical effort and performance. Third, in the older cohort, "different" was always reported with the right index finger and "same" with the right middle finger while the left hand held the grip, so a bias acting on the evidence for one response cannot be separated from the finger that gave it. Fourth, the trial sequence constrained the pupil measures: grip release fell inside the window after the stimulus, the window just before it contained the pupil response to the standard, and the delayed-response design limited how much response times could constrain the diffusion model. Fifth, the effects in older adults were small, and the criterion shift lost its credibility in some subsamples. Finally, Chapters 3 and 4 analyzed the same trials, so their agreement is convergence across models rather than independent replication.
 
 ## Future directions
 
-The concrete next studies this dissertation motivates.
+These findings motivate four lines of work. A direct comparison of younger and older adults, tested in the same setting with the same stimuli, would show whether the criterion shift is specific to aging. More than two levels of physical effort would describe how the effects scale with force and whether heavier effort produces the interaction absent here. Counterbalancing the response mapping, and using a free-response version of the task with across-trial variability in the diffusion model [@ratcliff2002estimating], would separate a criterion shift from a bias tied to one finger and constrain the boundary more directly. Finally, pupil windows that are free of preceding stimuli and end before the response, together with the locus coeruleus imaging collected during these sessions but not analyzed here, would test more directly whether the noradrenergic system links physical effort to decision policy.
 
 ## Closing
 
-A short paragraph stating the dissertation's contribution in one breath.
+Holding a moderately effortful grip did not drain the resources needed to remember or discriminate stimuli in younger adults, and it drained them at most slightly in older adults. What changed in older adults was how readily they reported a difference. Physical effort may thus shape everyday judgments in later life less by degrading what is perceived than by changing the evidence required before a change is reported, a cost that falls on the small differences that are hardest to detect.
