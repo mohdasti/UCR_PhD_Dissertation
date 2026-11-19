@@ -4,4 +4,4 @@ Source commit: 3f8ffde
 Source file: reports/chap3_revised.qmd
 Tables: output/ddm_refits/runs/final_20261016/tables/final
 Figures: output/ddm_refits/runs/final_20261016/figures/final
-Synced: 2026-11-18
+Synced: 2026-11-19

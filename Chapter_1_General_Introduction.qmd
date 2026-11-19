@@ -1,44 +1,35 @@
 # General Introduction {#sec-general-introduction}
 
-::: {.callout-note}
-## Scaffolding — replace with your text
-
-UCR requires journal-format dissertations to open with a general introduction
-(it "may contain a review of relevant literature"). Its job is to motivate the
-program of research as a whole and give the reader the background needed for
-Chapters 2–4. Suggested structure below — delete these notes as you write.
-:::
-
 ## The problem
 
-Why study concurrent cognitive and physical effort? Motivate with the real-world
-setting (e.g., demanding cognitive work performed while the body is under load)
-and the gap: most effort research manipulates cognitive *or* physical demands in
-isolation.
+Many everyday tasks combine a judgment with physical work. A driver gripping the steering wheel judges whether a gap in traffic is large enough, a person carrying groceries reads a price label, and a worker holding a tool listens for an alarm. Older adults meet such combinations often, and combining demands costs them more than it costs younger adults [@Lindenberger2000-aw; @Verhaeghen2003-ft]. Research on these costs in aging has mostly paired a cognitive task with walking [@Hausdorff2008-st; @Plummer-D-Amato2012-ss], even though many daily demands involve holding a steady force rather than moving. The few studies that held a force while manipulating task difficulty have examined working memory [@Azer2023-ft; @Park2021-rs], and studies of handgrip and cognition more often test performance after a period of exercise than during it [@Brown2015-zu; @Washio2021-kg]. It is therefore unclear whether physical effort and task difficulty draw on a common pool of resources, whether physical effort changes a judgment itself or only how it is reported, and whether the answer differs with age.
+
+This dissertation addresses these questions with one manipulation used throughout: an isometric handgrip held at 5% or 40% of maximum voluntary contraction (MVC) while participants made memory and perceptual judgments of varying task difficulty, with pupil size recorded on every trial. The three empirical chapters move from asking whether the two demands interact in younger adults (Chapter 2) to asking how physical effort changes the judgment in older adults (Chapters 3 and 4).
 
 ## Theoretical background
 
-- Cognitive effort as cost: task difficulty, performance decrements, effort
-  discounting.
-- Physical effort: operationalization (e.g., isometric handgrip at % MVC),
-  its behavioral and physiological signatures.
-- The resource question: do cognitive and physical effort draw on common
-  limited-capacity resources, or distinct pools?
-- Pupil response as an index of arousal/effort (LC–NE framework): task-evoked
-  pupil response, baseline vs. phasic components.
+Task difficulty is the cost that a judgment imposes through its own demands, such as more items to remember or a smaller difference to detect, and it appears as lower accuracy and slower responses [@Westbrook2015-gy]. Physical effort is the demand of producing force. An isometric handgrip held at a fixed proportion of MVC makes that demand precise and repeatable, raises heart rate and blood pressure [@Lind1967-tf], and engages the noradrenergic system [@Mather2020-ze]. Because the hand does not move, it is also compatible with eye tracking and brain imaging. People treat both demands as costs: given the choice, they avoid cognitive and physical effort alike, and the two costs are valued through partly shared neural mechanisms [@Chong2017-fx].
+
+The few studies that combined the two demands concurrently disagree. In younger adults performing visual search, a 40% MVC grip sped responses but enlarged the cost of a distractor, an interaction between task difficulty and physical effort [@Park2021-rs]. With a 30% MVC grip, younger adults showed no effect of physical effort, whereas older adults' working-memory accuracy fell when distractors were present [@Azer2023-ft]. These results raise two questions that this dissertation takes up: whether an interaction between task difficulty and physical effort extends beyond visual working memory to perceptual judgments, and whether older adults are more susceptible to it.
+
+Three accounts make different predictions about combining the demands. A capacity account holds that concurrent demands compete for a single limited pool of processing resources [@Kahneman1973-jw]. If task difficulty and physical effort draw on that pool, the cost of physical effort should grow with task difficulty, producing an interaction. The account also predicts larger costs in older adults, whose processing resources are reduced [@Salthouse1991-vr] and who are less able to suppress task-irrelevant information [@Gazzaley2005-ib]. Multiple-resource accounts hold instead that different kinds of processing draw on partly separate resources, so that two demands interfere only to the extent that they share one [@Navon1979-jk; @Wickens2008-pj]. If producing force and comparing two stimuli draw on different resources, their effects should add without interacting. Adaptive gain theory offers a third view, in which performance depends on noradrenergic arousal and is best at an intermediate level [@Aston-Jones2005-dg]. If both demands raise arousal, combining them could push performance past that optimum, and because aging may shift the optimum to lower levels [@Mather2016-bx], a grip that is harmless for younger adults could be costly for older adults. The task difficulty × physical effort interaction is therefore the central test in every chapter, and its presence or absence in each age group distinguishes the accounts.
+
+Accuracy and response time show that performance changes, but not which part of the judgment changes. Signal detection theory separates sensitivity, how well two stimuli are discriminated, from the criterion, how much evidence is required before a difference is reported [@macmillan2005detection; @prins2016psychophysics]. Physical effort could lower sensitivity by making the evidence noisier, or it could shift the criterion, which would change how often a difference is reported even when there is none. The drift-diffusion model extends this distinction to response times [@Ratcliff2008-fj]. It describes a two-choice decision as evidence accumulating at a rate set by its quality until it reaches one of two boundaries. The model separates evidence quality from the distance between the boundaries, a measure of response caution, and from the starting point, a bias set before the stimulus appears. The drift criterion, the reference against which evidence counts as favoring one response or the other, is the diffusion-model counterpart of the criterion in signal detection theory. These distinctions matter in aging. Older adults typically show wider boundaries and longer non-decision times than younger adults, whereas evidence quality is often preserved on simple perceptual tasks [@ratcliff2001aging; @Theisen2021-fn], and older adults set their boundaries more conservatively than would maximize their reward rate [@Starns2010-iu]. Physical effort could therefore act on how older adults use the evidence rather than on the evidence itself, a possibility that accuracy alone cannot distinguish from a loss of capacity.
+
+Pupil size offers one physiological measure that responds to both demands: it increases with task difficulty [@Beatty1982-wg; @Van_der_Wel2018-ko] and with physical effort [@Zenon2014-ze]. In adaptive gain theory, pupil size tracks activity of the locus coeruleus–noradrenaline system [@Aston-Jones2005-dg; @Joshi2016-zb], so the pupil offers a way to test whether the behavioral effects of physical effort run through that system. If the two demands share a pupil-linked resource, their effects on the pupil should interact, and pupil size should track the behavioral effects of physical effort. Two qualifications apply. Pupil size also covaries with activity outside the locus coeruleus [@Joshi2016-zb], and in older adults the pupil is smaller and its range of dilation narrower [@Winn1994-pi; @Piquado2010-eu], while the locus coeruleus is among the structures most vulnerable to aging [@Mather2016-bx].
 
 ## The present research
 
-How this dissertation attacks the problem: concurrent manipulations of task
-difficulty and physical effort across cognitive domains, with behavioral and
-pupillometric measures. State the overarching aims here.
+The dissertation had three aims. The first was to test whether task difficulty and physical effort interact in younger adults across working memory and perceptual discrimination, and whether pupil size reflects both demands. The second was to test, in older adults, whether physical effort changes perceptual sensitivity or the criterion for reporting a difference. The third was to identify which decision process carries the effect of physical effort in older adults, and whether pupil size measured before or during the decision accounts for it.
+
+All three studies used the same handgrip levels and crossed physical effort with task difficulty. The 5% level required holding the grip with a minimal force, and the 40% level was chosen because it produced an interaction with task difficulty in younger adults [@Park2021-rs], whereas 30% did not [@Azer2023-ft], and because it is a demand that could exceed older adults' optimal level of arousal. The younger adults in Chapter 2 were tested in a laboratory on three tasks. The older adults in Chapters 3 and 4 were a single cohort tested in an MRI scanner on the two discrimination tasks, with stimulus differences and trial timing adapted to that setting. Choices and confidence in that cohort were also analyzed by @sun2026handgrip. Because the younger and older samples differed in setting, stimuli, and measures, the dissertation compares the age groups across studies rather than testing age differences directly.
 
 ## Overview of chapters
 
-- **Chapter 2** examines effects of concurrent task difficulty and physical
-  effort on memory and perceptual performance and pupil response in younger
-  adults.
-- **Chapter 3** …(one-paragraph preview of the study and its place in the arc)…
-- **Chapter 4** …(one-paragraph preview of the study and its place in the arc)…
+Chapter 2, published as @Dastgheib2026-crpi, tested 38 younger adults on a visual working-memory task and auditory and visual discrimination tasks while they held the grip at low or high physical effort. It asks whether task difficulty and physical effort interact on accuracy, response time, and the pupil response, and whether the behavioral and pupil effects of the two demands are related across individuals.
 
-End with a roadmap sentence pointing the reader into Chapter 2.
+Chapter 3 turns to older adults performing the auditory and visual discrimination tasks. Using mixed-effects models of the psychometric function across all trials, it asks whether high physical effort lowers sensitivity, shifts the criterion for reporting a difference, or imposes a cost that grows with task difficulty, and whether pupil size before and after the stimulus to be judged tracks the judgment.
+
+Chapter 4 analyzes the choices and response times of the same older adults with a hierarchical Bayesian drift-diffusion model. It asks whether physical effort changes evidence quality, response caution, the starting point, or the drift criterion, and whether pupil measures taken before and during the decision predict those decision processes.
+
+Chapter 5 summarizes the findings, integrates them across the three studies, and considers their implications, limitations, and the studies they motivate.

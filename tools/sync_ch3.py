@@ -96,6 +96,13 @@ KEY_MAP = {
     "vanderwel2018": "Van_der_Wel2018-ko",
     "wickens2008": "Wickens2008-pj",
     "zenon2014": "Zenon2014-ze",
+    # Same works already in the book under Chapter 1/2 keys (avoids 2016a/2016b etc.).
+    "joshi2016": "Joshi2016-zb",
+    "mather2016": "Mather2016-bx",
+    "mather2020isometric": "Mather2020-ze",
+    "piquado2010": "Piquado2010-eu",
+    "verhaeghen2003": "Verhaeghen2003-ft",
+    "winn1994": "Winn1994-pi",
 }
 
 # Fixed-effects table (Model, Term, Estimate, SE, Statistic, 95% CI, p): wider
