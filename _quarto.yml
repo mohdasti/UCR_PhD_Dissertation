@@ -22,6 +22,7 @@ book:
 bibliography: references.bib
 nocite: |
   @Sadi1900-gulistan
+  @alhindi1986kawthariyah
 
 # APA 7th edition (citation-style-language/styles, apa.csl)
 csl: apa.csl
