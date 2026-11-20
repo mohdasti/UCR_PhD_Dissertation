@@ -20,6 +20,8 @@ book:
     - Appendix_C_Chapter_4_Supplement.qmd
 
 bibliography: references.bib
+nocite: |
+  @Sadi1900-gulistan
 
 # APA 7th edition (citation-style-language/styles, apa.csl)
 csl: apa.csl

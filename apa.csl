@@ -45,6 +45,10 @@
         <multiple>guest experts</multiple>
       </term>
       <term form="short" name="illustrator">illus.</term>
+      <term form="short" name="translator">
+        <single>trans.</single>
+        <multiple>trans.</multiple>
+      </term>
       <term form="short" name="interviewer">
         <single>interviewer</single>
         <multiple>interviewers</multiple>
