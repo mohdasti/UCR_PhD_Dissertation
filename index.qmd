@@ -37,6 +37,21 @@ The text of Chapter 2 of this dissertation is a reprint of the following previou
 \begin{center}
 To my wife, Fatemeh, and my kitten, Matcha.
 \end{center}
+```{=latex}
+% TODO: add page number, e.g. (Sa'di, 1258/1900, p. N)
+```
+\chapter*{Epigraph}
+\addcontentsline{toc}{chapter}{Epigraph}
+\vspace*{\fill}
+\begin{singlespace}
+\noindent\textit{Ten dervishes can sleep on one rug, but two kings cannot be accommodated in a whole kingdom.}\footnote{Original Persian: \ar{ده درویش در گلیمی بخسپند و دو پادشاه در اقلیمی نگنجند.} Sa‘dī, \textit{Gulistān}, Book~1 (``On the Manners of Kings''), in the story of the short prince; translated by James Ross (Sa'di, 1258/1900). In Persian, the sentence rhymes \textit{gilīm} (rug) with \textit{iqlīm} (realm), a rhyme the translation cannot keep.}
+
+\vspace{1.5em}
+\begin{flushright}
+--- \textsc{Sa‘dī of Shīrāz} (ca.~1210--1291), \textit{Gulistān}\footnote{In Sa‘dī's story, a king sends his rival sons to separate provinces, because rivals who each claim the whole cannot share it, whereas those who want little can share even a single rug. This dissertation borrows the image for the question it asks: whether two demands made at once, such as holding a grip while judging a difference, can share the same processing resources, like the dervishes, or must compete for them, like the kings.}
+\end{flushright}
+\end{singlespace}
+\vspace{2\baselineskip}
 \begin{ucrabstract}
 Many everyday tasks require a perceptual or memory judgment while the body is working, yet it is unclear whether physical effort and task difficulty compete for shared processing resources, and whether their effects change with age. This dissertation tested how concurrent physical effort, an isometric handgrip held at 5% or 40% of maximum voluntary contraction, and task difficulty affect performance, decision processes, and pupil size. Chapter 2 tested 38 younger adults on a visual working-memory task and auditory and visual discrimination tasks. Harder trials were less accurate in every task and slower in both discrimination tasks, high physical effort slowed responses in the visual discrimination task and enlarged the pupil response in every task, and task difficulty and physical effort did not interact on any measure. Chapters 3 and 4 tested older adults on the two discrimination tasks in an MRI scanner. In Chapter 3, mixed-effects models of the psychometric function showed that high physical effort lowered the probability of reporting a difference without reducing sensitivity. The reduction was slightly larger for the smallest differences, and on trials with identical stimuli it was similar in size but uncertain on its own. In Chapter 4, a hierarchical Bayesian drift-diffusion model of choices and response times located this effect in a small shift of the drift criterion toward "same" responses, with little change in evidence quality, response caution, or the starting point. In older adults, physical effort changed pupil size only weakly, and no pupil measure taken before the decision accounted for the behavioral effects. Together, the studies offer little support for a single limited-capacity resource shared by physical effort and task difficulty at these force levels. In older adults, physical effort instead changed mainly how readily a difference was reported, a shift in decision policy rather than a loss of perceptual sensitivity. Because the younger and older samples differed in setting, stimuli, and measures, these findings do not by themselves establish an age difference. They motivate direct age comparisons, more levels of physical effort, and designs that separate the decision criterion from the response mapping.
 \end{ucrabstract}
