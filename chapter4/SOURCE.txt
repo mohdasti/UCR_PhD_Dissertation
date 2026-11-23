@@ -1,6 +1,6 @@
 Chapter 4 assets, copied by tools/sync_ch4.py. Do not edit here.
 Source repo: modeling-pupil-DDM
-Source commit: 8b5187d
+Source commit: fb4b751
 Source file: reports/chap3_revised.qmd
 Tables: output/ddm_refits/runs/final_20261016/tables/final
 Figures: output/ddm_refits/runs/final_20261016/figures/final
