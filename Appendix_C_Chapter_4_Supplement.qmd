@@ -269,9 +269,9 @@ Observed accuracy, high minus low physical effort, at each stimulus type. Estima
 \FloatBarrier
 ```
 
-## Pupil data
+## Pupil data {#sec-ch4-supp-pupil}
 
-The pupil sample was `r fmt_int(v("n_pupil_final_trials"))` trials from `r v("n_pupil_final_subjects")` participants. @tbl-ch4-pupil-models gives the estimates of every pupil-linked model, @tbl-ch4-pupil-descriptives the pupil measures by task and physical effort and @fig-ch4-tepr the pupil time course.
+The pupil sample was `r fmt_int(v("n_pupil_final_trials"))` trials from `r v("n_pupil_final_subjects")` participants. @tbl-ch4-pupil-models gives the estimates of every pupil-linked model and @tbl-ch4-pupil-descriptives the pupil measures by task and physical effort. The pupil time course is @fig-ch4-pupil-timecourse.
 
 ```{=latex}
 \begin{landscape}
@@ -314,15 +314,28 @@ Pupil measures by task and physical effort. The TEPR is shown relative to the pr
 
 :::
 
-::: {#fig-ch4-tepr}
+Each participant × task cell contained trials at both physical effort levels (median `r av("cell_median")` per level, minimum `r av("cell_min")`; `r av("cells_lt10")` of `r av("cells_total")` cells had fewer than 10 trials at one level). Pupil predictors were centered within participant × task × physical effort, so each cell mean rested on at least `r av("cell_min")` trials. Counts per physical effort level and stimulus type were smaller (median `r av("cell_stim_median")`, minimum `r av("cell_stim_min")`), but the pupil predictors were not centered within stimulus type, so these smaller counts do not affect the centering. @tbl-ch4-pupil-sensitivity repeats the physical effort comparisons of pupil size with at least 10 or 15 trials per physical effort level, with trial counts equalized between levels by random subsampling (1,000 draws), and with a trial-level mixed model. With at least 15 trials per level, the VDT difference in the TEPR relative to the pre-probe baseline was no longer significant (*p* = `r av("vdt_tepr_k15_p")`). @fig-ch4-grip-participants shows each participant's grip-period pupil size at both physical effort levels.
+
+::: {#tbl-ch4-pupil-sensitivity}
+
+```{r}
+#| echo: false
+ch3_tbl_pupil_sensitivity()
+```
+
+Sensitivity of the physical effort comparisons of pupil size to the number of trials per participant. *M*diff is high minus low physical effort in arbitrary units. Equalized counts: within each participant and task, the physical effort level with more trials was randomly subsampled to the count of the other, 1,000 times. Trial-level model: linear mixed model with a by-participant intercept, and a slope for physical effort where it was estimable. For the ADT grip period, the trial-level model has a random intercept only, because the model with a random slope was singular.
+
+:::
+
+::: {#fig-ch4-grip-participants}
 
 ```{r}
 #| echo: false
 #| out-width: "100%"
-suppressWarnings(knitr::include_graphics(normalizePath(file.path(params$figures_dir, "S_tepr_timecourse.png"), mustWork = TRUE), error = FALSE))
+suppressWarnings(knitr::include_graphics(normalizePath(file.path(params$figures_dir, "S_grip_by_participant.png"), mustWork = TRUE), error = FALSE))
 ```
 
-Mean baseline-corrected pupil by task and physical effort. The grey band is the grip period and the blue band is the TEPR window. The solid line is probe onset and the dashed line is the response cue. Dotted lines: gauge offset (3.00 s) and standard onset (3.75 s). The brief dip at 6.02 s in the VDT comes from one sample in 58 trials from two participants whose recordings were segmented from eye-tracker event codes; it changes those trials' TEPR by less than 5% of a within-person SD.
+Grip-period pupil size (1.00–4.35 s after squeeze onset) for each participant at low and high physical effort. Lines join each participant's two means; large points are group means with 95% confidence intervals.
 
 :::
 
