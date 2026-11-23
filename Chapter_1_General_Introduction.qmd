@@ -30,6 +30,6 @@ Chapter 2, published as @Dastgheib2026-crpi, tested 38 younger adults on a visua
 
 Chapter 3 turns to older adults performing the auditory and visual discrimination tasks. Using mixed-effects models of the psychometric function across all trials, it asks whether high physical effort lowers sensitivity, shifts the criterion for reporting a difference, or imposes a cost that grows with task difficulty, and whether pupil size before and after the stimulus to be judged tracks the judgment.
 
-Chapter 4 analyzes the choices and response times of the same older adults with a hierarchical Bayesian drift-diffusion model. It asks whether physical effort changes evidence quality, response caution, the starting point, or the drift criterion, and whether pupil measures taken before and during the decision predict those decision processes.
+Chapter 4 analyzes the choices and response times of the same older adults with a hierarchical Bayesian drift-diffusion model. It contrasts a capacity account, in which physical effort lowers the quality of the evidence, with a policy account, in which physical effort changes how the evidence is used. It asks whether physical effort changes evidence quality, response caution, the starting point, or the drift criterion, and whether pupil measures taken before and during the decision predict those decision processes.
 
 Chapter 5 summarizes the findings, integrates them across the three studies, and considers their implications, limitations, and the studies they motivate.
