@@ -73,6 +73,8 @@ SRC_BIB = "reports/references.bib"
 SRC_HELPER = "R/ch3_report_helpers.R"
 SRC_NEURO = "output/neuropsych_demographics"
 NEURO_FILES = ["extended_baseline_continuous.csv", "extended_baseline_categorical.csv"]
+AARON_DIR = "output/aaron_checks"
+AARON_FILES = ["aaron_inline.csv", "D_ttest_sensitivity.csv"]
 
 OUT_CHAPTER = "Chapter_4_DDM_Older_Adults.qmd"
 OUT_APPENDIX = "Appendix_C_Chapter_4_Supplement.qmd"
@@ -289,7 +291,10 @@ def resolve_meta_divs(text):
     return "\n".join(out)
 
 
-TYPED_HEADING = re.compile(r"^(#{1,5}) (\d+(?:\.\d+)*) (.+?) \{\.unnumbered\}\s*$")
+# Optional {#id .unnumbered} (source cross-ref target) or plain {.unnumbered}.
+TYPED_HEADING = re.compile(
+    r"^(#{1,5}) (\d+(?:\.\d+)*) (.+?) (?:\{#([A-Za-z0-9_-]+) \.unnumbered\}|\{\.unnumbered\})\s*$"
+)
 
 
 def number_id(num):
@@ -297,15 +302,21 @@ def number_id(num):
 
 
 def convert_main_headings(text):
-    """'## 2.1 Participants {.unnumbered}' -> '### Participants {#sec-ch4-2-1}'."""
+    """'## 2.1 Participants {.unnumbered}' -> '### Participants {#sec-ch4-2-1}'.
+
+    A heading that already names its id ('## 4.1 Title {#sec-disc-capacity .unnumbered}')
+    keeps that id. prefix_labels() adds the ch4- prefix later, and Section 4.1
+    references resolve to the same id.
+    """
     out, ids = [], {}
     for line, in_code in iter_lines_outside_code(text):
         if not in_code and line.startswith("#"):
             m = TYPED_HEADING.match(line)
             need(m is not None, f"main-text heading without a typed number: {line!r}")
-            hashes, num, title = m.groups()
-            ids[num] = number_id(num)
-            line = f"#{hashes} {title} {{#{ids[num]}}}"
+            hashes, num, title, explicit = m.groups()
+            sec_id = explicit if explicit else number_id(num)
+            ids[num] = sec_id
+            line = f"#{hashes} {title} {{#{sec_id}}}"
         out.append(line)
     return "\n".join(out), ids
 
@@ -339,8 +350,12 @@ def convert_supp_floats(text):
     return text
 
 
+# {#tbl-predictions} or {#tbl-predictions tbl-colwidths="..."}.
+ID_ATTR = r"\{#((?:sec|fig|tbl)-[A-Za-z0-9_-]+)(?=[\s\}])"
+
+
 def collect_labels(text):
-    labels = set(re.findall(r"\{#((?:sec|fig|tbl)-[A-Za-z0-9_-]+)\}", text))
+    labels = set(re.findall(ID_ATTR, text))
     labels |= set(re.findall(r"^#\| label: ((?:sec|fig|tbl)-[A-Za-z0-9_-]+)\s*$", text, re.M))
     return {l for l in labels if not l.startswith(("sec-" + PREFIX, "fig-" + PREFIX, "tbl-" + PREFIX))}
 
@@ -350,8 +365,8 @@ def prefix_labels(text, labels):
         kind, rest = name.split("-", 1)
         return f"{kind}-{PREFIX}{rest}"
 
-    text = re.sub(r"\{#((?:sec|fig|tbl)-[A-Za-z0-9_-]+)\}",
-                  lambda m: "{#" + lab(m.group(1)) + "}" if m.group(1) in labels else m.group(0), text)
+    text = re.sub(ID_ATTR,
+                  lambda m: "{#" + lab(m.group(1)) if m.group(1) in labels else m.group(0), text)
     text = re.sub(r"^#\| label: ((?:sec|fig|tbl)-[A-Za-z0-9_-]+)(?=\s*$)",
                   lambda m: "#| label: " + lab(m.group(1)) if m.group(1) in labels else m.group(0),
                   text, flags=re.M)
@@ -545,7 +560,7 @@ def build(src):
         need(not re.search(r"\bSection \d", t), f"{name} still has a typed section reference")
     for lbl in labels:
         need(not re.search(r"@" + re.escape(lbl) + r"(?![A-Za-z0-9_-])", main + supp), f"unprefixed reference left: @{lbl}")
-    defined = set(re.findall(r"\{#((?:sec|fig|tbl)-[A-Za-z0-9_-]+)\}", main + supp))
+    defined = set(re.findall(ID_ATTR, main + supp))
     defined |= set(re.findall(r"^#\| label: ((?:sec|fig|tbl)-[A-Za-z0-9_-]+)\s*$", main + supp, re.M))
     for ref in set(re.findall(r"@((?:sec|fig|tbl)-[A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)", main + supp)):
         need(ref in defined, f"cross-reference to an undefined label: @{ref}")
@@ -593,6 +608,13 @@ def build(src):
         need(f"{SRC_NEURO}/{f}" in neuro, f"{SRC_NEURO}/{f} is not tracked in the chapter repo")
 
     helper = read(os.path.join(src, SRC_HELPER))
+    tracked_aaron = set(git_ls(src, AARON_DIR))
+    for f in AARON_FILES:
+        need(f"{AARON_DIR}/{f}" in tracked_aaron, f"{AARON_DIR}/{f} is not tracked in the chapter repo")
+    need(helper.count("output/aaron_checks/") == 2, "helper no longer reads output/aaron_checks/ twice")
+    need(helper.count('"output", "aaron_checks"') == 1, "helper no longer joins output/aaron_checks")
+    helper = helper.replace("output/aaron_checks/", "chapter4/aaron_checks/")
+    helper = helper.replace('"output", "aaron_checks"', '"chapter4", "aaron_checks"')
     old_neuro = 'output/neuropsych_demographics/'
     need(helper.count(old_neuro) == 2, "helper no longer reads output/neuropsych_demographics/ twice")
     helper = helper.replace(old_neuro, "chapter4/neuropsych/")
@@ -737,7 +759,7 @@ def write(src, r):
             fh.write(txt)
 
     out = os.path.join(ROOT, OUT_DIR)
-    for sub in ("tables", "figures", "neuropsych", "R"):
+    for sub in ("tables", "figures", "neuropsych", "aaron_checks", "R"):
         shutil.rmtree(os.path.join(out, sub), ignore_errors=True)
         os.makedirs(os.path.join(out, sub))
     for f in r["tables"]:
@@ -746,6 +768,8 @@ def write(src, r):
         shutil.copy2(os.path.join(src, f), os.path.join(out, "figures", os.path.basename(f)))
     for f in NEURO_FILES:
         shutil.copy2(os.path.join(src, SRC_NEURO, f), os.path.join(out, "neuropsych", f))
+    for f in AARON_FILES:
+        shutil.copy2(os.path.join(src, AARON_DIR, f), os.path.join(out, "aaron_checks", f))
     w(os.path.join(OUT_DIR, "R", "ch3_report_helpers.R"), r["helper"])
     w(os.path.join(OUT_DIR, "setup.R"), r["setup"])
     w(os.path.join(OUT_DIR, "SOURCE.txt"), r["source_txt"])

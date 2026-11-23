@@ -23,6 +23,41 @@ ch3_design_keys <- c(
   stop(paste0(...), call. = FALSE)
 }
 
+.aaron_inline <- NULL
+
+av <- function(key) {
+  if (is.null(.aaron_inline)) {
+    path <- "chapter4/aaron_checks/aaron_inline.csv"
+    if (!file.exists(path) && exists("proj_root", inherits = TRUE)) {
+      path <- file.path(get("proj_root", inherits = TRUE), "chapter4", "aaron_checks", "aaron_inline.csv")
+    }
+    if (!file.exists(path)) {
+      .stop_value("aaron_inline.csv not found")
+    }
+    df <- utils::read.csv(
+      path,
+      stringsAsFactors = FALSE,
+      check.names = FALSE,
+      fileEncoding = "UTF-8"
+    )
+    if (!all(c("key", "value") %in% names(df))) {
+      .stop_value("aaron_inline.csv must have key and value columns")
+    }
+    .aaron_inline <<- stats::setNames(as.character(df$value), df$key)
+  }
+  if (!is.character(key) || length(key) != 1L || !nzchar(key)) {
+    .stop_value("av() expects a single key name")
+  }
+  if (!key %in% names(.aaron_inline)) {
+    .stop_value("aaron inline key not found: ", key)
+  }
+  val <- unname(.aaron_inline[[key]])
+  if (is.null(val) || length(val) != 1L || is.na(val)) {
+    .stop_value("aaron inline value is missing: ", key)
+  }
+  val
+}
+
 # v() never returns a missing, NULL, or NA value. Every successful call is logged.
 v <- function(key, field = NULL) {
   if (!is.character(key) || length(key) != 1L || !nzchar(key)) {
@@ -423,11 +458,23 @@ pt_s <- function(key) {
   }
 }
 
+cap_fig_pupil_timecourse <- function() paste0(
+  "Pupil size over the trial by task and physical effort, relative to the 0.5 s before squeeze onset. ",
+  "Lines are means of participant means and bands \u00b11 within-participant SE (ADT, *n* = ", av("n_pupil_adt"),
+  "; VDT, *n* = ", av("n_pupil_vdt"), "). Numbered lines mark task events: (1) squeeze onset, 0 s; ",
+  "(2) gauge offset, 3.00 s; (3) standard onset, 3.75 s; (4) probe onset, 4.35 s; ",
+  "(5) probe offset and grip-release cue, 4.45 s; (6) response cue, 4.70 s. ",
+  "Shaded regions mark the analysis windows: pre-squeeze baseline (\u22120.5\u20130 s), grip period (1.00\u20134.35 s), ",
+  "pre-probe baseline (3.85\u20134.35 s) and TEPR window (4.65\u20137.65 s). ",
+  "In the VDT, one misaligned sample at 6.02 s in 58 trials from two participants, whose recordings were segmented from eye-tracker event codes, ",
+  "was replaced for display with the mean of the samples on either side; no analysis used the replaced values."
+)
+
 cap_fig_design <- function() paste0(
-  "Task and model. (A) Trial timeline from squeeze onset: grip gauge (low physical effort, 5% MVC; high physical effort, 40% MVC), standard and probe stimuli, ",
-  "response cue and response window. (B) Diffusion model with response coding: evidence accumulates from the starting point (z) toward the ",
-  "\u201cdifferent\u201d (upper) or \u201csame\u201d (lower) boundary, separated by a, at drift rate v; t\u2080 is non-decision time. ",
-  "(C) Predictors of each parameter in the primary model (M4).")
+  "Task and model. (A) Trial timeline from squeeze onset: grip gauge (low physical effort, 5% MVC; high physical effort, 40% MVC), standard, probe, ",
+  "response cue and response window. Times are given from squeeze onset. (B) Diffusion model with response coding. After the non-decision time (*t*~0~), ",
+  "measured from probe onset, evidence accumulates at drift rate *v* from the starting point *z* toward the \"different\" (upper) or \"same\" (lower) boundary, ",
+  "separated by *a*. The starting point is a position on the evidence axis, not a time: 0.5 is unbiased, and values above 0.5 favor \"different.\"")
 
 cap_fig_condition_params <- function() paste0(
   "Posterior drift rate (top) and boundary separation (bottom) by task, stimulus type and physical effort in the primary model (M4). ",
@@ -1619,6 +1666,102 @@ ch3_tbl_temporal <- function(df) {
     cols = names(out),
     col_labels = c("Model", "Parameter", "Estimate", "SD", "P(\u03b2 > 0)"),
     footnote = "Fit on the pre-revision model structure. The within-run rows come from the fatigue-trajectory file, which has no model column. P(\u03b2 > 0) is the posterior probability that the coefficient is positive."
+  )
+}
+
+ch3_tbl_pupil_sensitivity <- function(path = "chapter4/aaron_checks/D_ttest_sensitivity.csv") {
+  if (!file.exists(path) && exists("proj_root", inherits = TRUE)) {
+    path <- file.path(get("proj_root", inherits = TRUE), path)
+  }
+  if (!file.exists(path)) {
+    stop("pupil sensitivity table not found: ", path, call. = FALSE)
+  }
+  df <- utils::read.csv(path, stringsAsFactors = FALSE, check.names = FALSE)
+  measures <- c("grip_raw", "tepr_mean_465_765", "tepr_b0_mean")
+  labels <- c(
+    grip_raw = "Grip period",
+    tepr_mean_465_765 = "TEPR relative to pre-probe",
+    tepr_b0_mean = "TEPR relative to pre-squeeze"
+  )
+  pct_sig <- function(x) fmt_num(100 * x, 1)
+  cell_p <- function(p) fmt_prob(p)
+  cell_d <- function(x) fmt_num(x, 2)
+  rows <- list()
+  for (ms in measures) {
+    for (task in c("ADT", "VDT")) {
+      pick <- function(block) {
+        hit <- df[df$block == block & df$task == task & df$measure == ms, , drop = FALSE]
+        if (nrow(hit) != 1L) {
+          stop("D_ttest_sensitivity.csv missing ", block, " ", task, " ", ms, call. = FALSE)
+        }
+        hit
+      }
+      as_rep <- pick("reproduce")
+      k10 <- pick("min_10")
+      k15 <- pick("min_15")
+      eq <- pick("balanced_1000")
+      tr <- pick("weighted_lmer")
+      row <- data.frame(
+        Measure = unname(labels[[ms]]),
+        Task = task,
+        n_rep = fmt_int(as_rep$n),
+        d_rep = cell_d(as_rep$mdiff),
+        p_rep = cell_p(as_rep$p),
+        n_10 = fmt_int(k10$n),
+        d_10 = cell_d(k10$mdiff),
+        p_10 = cell_p(k10$p),
+        n_15 = fmt_int(k15$n),
+        d_15 = cell_d(k15$mdiff),
+        p_15 = cell_p(k15$p),
+        d_eq = cell_d(eq$mdiff),
+        pct_eq = pct_sig(eq$prop_p_lt_05),
+        est_tr = cell_d(tr$estimate),
+        p_tr = cell_p(tr$p),
+        check.names = FALSE,
+        stringsAsFactors = FALSE
+      )
+      rows[[length(rows) + 1L]] <- row
+    }
+  }
+  out <- do.call(rbind, rows)
+  if (isTRUE(knitr::is_latex_output())) {
+    esc <- function(x) {
+      x <- gsub("%", "\\\\%", x, fixed = TRUE)
+      x <- gsub("<", "$<$", x, fixed = TRUE)
+      x
+    }
+    body <- apply(out, 1, function(r) {
+      paste(c(r[["Measure"]], r[["Task"]], esc(unname(r[-(1:2)]))), collapse = " & ")
+    })
+    tex <- paste0(
+      "\\begingroup\\small\\setlength{\\tabcolsep}{3.2pt}\n",
+      "\\resizebox{\\linewidth}{!}{%\n",
+      "\\begin{tabular}{@{}l l rrr rrr rrr rr rr@{}}\n",
+      "\\toprule\n",
+      "\\multicolumn{2}{@{}l}{} & \\multicolumn{3}{c}{As reported} & ",
+      "\\multicolumn{3}{c}{$\\geq$ 10 trials} & \\multicolumn{3}{c}{$\\geq$ 15 trials} & ",
+      "\\multicolumn{2}{c}{Equalized} & \\multicolumn{2}{c}{Trial-level} \\\\\n",
+      "\\cmidrule(lr){3-5}\\cmidrule(lr){6-8}\\cmidrule(lr){9-11}\\cmidrule(lr){12-13}\\cmidrule(lr){14-15}\n",
+      "Measure & Task & $n$ & $M_{\\mathrm{diff}}$ & $p$ & $n$ & $M_{\\mathrm{diff}}$ & $p$ & $n$ & $M_{\\mathrm{diff}}$ & $p$ & $M_{\\mathrm{diff}}$ & \\% of draws $p<.05$ & Estimate & $p$ \\\\\n",
+      "\\midrule\n",
+      paste0(body, " \\\\", collapse = "\n"), "\n",
+      "\\bottomrule\n",
+      "\\end{tabular}%\n}\n",
+      "\\endgroup\n"
+    )
+    return(knitr::asis_output(tex))
+  }
+  make_table(
+    out,
+    cols = names(out),
+    col_labels = c(
+      "Measure", "Task",
+      "Rep. n", "Rep. Mdiff", "Rep. p",
+      "k10 n", "k10 Mdiff", "k10 p",
+      "k15 n", "k15 Mdiff", "k15 p",
+      "Eq. Mdiff", "Eq. % of draws p<.05",
+      "TL Estimate", "TL p"
+    )
   )
 }
 
